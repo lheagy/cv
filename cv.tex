@@ -1,0 +1,647 @@
+\documentclass[oneside]{cv}
+
+% \usepackage{biblatex}
+
+% standard packages
+\setlength\parindent{0in}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+% Define command to insert month name and year as date
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Set fonts. Requires compilation with xelatex
+\usepackage{fontspec}
+\setmainfont{Helvetica Neue Light}[
+  ItalicFont=Helvetica Neue Light Italic,
+]
+
+\newfontfamily\HelveticaNeueUltraLight{Helvetica Neue UltraLight}
+\newfontfamily\HelveticaNeueUltraLightItalic{Helvetica Neue UltraLight Italic}
+
+
+% shortcuts
+\newcommand{\cv}{curriculum vitae}
+\newcommand{\CV}{Curriculum Vitae}
+
+% Personal Info
+\newcommand{\firstname}{Lindsey}
+\newcommand{\middleinitial}{J.}
+\newcommand{\lastname}{Heagy}
+\newcommand{\initials}{L.J.}
+
+\newcommand{\emailaddress}{lindseyheagy@gmail.com}
+\newcommand{\email}{\href{mailto:\emailaddress}{\emailaddress}}
+
+\newcommand{\phone}{604-836-2715}
+
+\newcommand{\websiteurl}{https://lindseyjh.ca}
+\newcommand{\website}{\href{\websiteurl}{\websiteurl}}
+
+\newcommand{\position}{PhD Candidate}
+\newcommand{\affiliation}{University of British Columbia}
+
+\newcommand{\fullname}{\firstname\ \middleinitial\  \lastname}
+\newcommand{\shortname}{\initials\ \lastname}
+
+
+% titles, headings, etc
+\newcommand{\mytitle}[1]{
+    {\HelveticaNeueUltraLight\fontsize{36pt}{0}\selectfont #1}\\[0.5cm]
+}
+
+\newcommand{\mysubtitle}{
+    {\fontsize{14pt}{0}\selectfont \CV\ $~\cdot~$ \monthyear\today} \\[0.25cm]
+}
+
+\newcommand{\heading}[1]{
+    \vspace{0.7cm}
+    {\HelveticaNeueUltraLight\fontsize{18pt}{0}\selectfont #1}\\
+    \vspace{-0.2cm}
+    \hrule
+    \vspace{0.4cm}
+}
+
+\newcommand{\subheading}[1]{
+    \vspace{0.4cm}
+    {\HelveticaNeueUltraLight\fontsize{14pt}{0}\selectfont #1}\\
+    \vspace{-0.1cm}
+}
+
+\newcommand{\tworow}[1]{\multirow{2}{2cm}{#1}}
+
+\usepackage{environ}
+\NewEnviron{entryleft}{
+    \vspace{-0.3cm}
+    \begin{tabularx}{\textwidth}{@{}p{0.83\textwidth} p{0.17\textwidth}XX@{}}
+        \BODY
+    \end{tabularx}
+    \vspace{-0.2cm}
+}
+
+\usepackage{environ}
+\NewEnviron{entryright}{
+    \vspace{-0.3cm}
+    \begin{tabularx}{\textwidth}{@{}p{0.16\textwidth} @{}p{0.84\textwidth}}
+        \BODY
+    \end{tabularx}
+    \vspace{-0.2cm}
+}
+
+\newenvironment{myquote}%
+  {\list{}{\leftmargin=0.5cm\rightmargin=0cm}\item[]}%
+  {\endlist}
+
+
+\newcommand{\myindent}[1]{
+    \begin{myquote}
+    \vspace{-0.7cm}
+        #1
+    \vspace{-0.4cm}
+    \end{myquote}
+}
+
+\NewEnviron{myitemize}{
+    \vspace{-0.2cm}
+    \begin{itemize}[topsep=0pt,itemsep=0.75pt]
+        \BODY
+    \end{itemize}
+    \vspace{-0.2cm}
+}
+
+\NewEnviron{myenumerate}{
+    % \vspace{-0.2cm}
+    \begin{enumerate}[topsep=0pt, itemsep=0.75pt]
+        \BODY
+    \end{enumerate}
+    % \vspace{-0.2cm}
+}
+
+% set header
+\chead{
+    \HelveticaNeueUltraLightItalic\fontsize{10pt}{12pt} \shortname $~\cdot~$
+    \cv $~\cdot~$
+    \monthyear\today
+}
+
+\begin{document}
+\hyphenpenalty=100000
+\exhyphenpenalty=1000000
+
+% =========================== PERSONAL INFO ================================ %
+
+\begin{centering}
+    \mytitle{\fullname}
+    \mysubtitle
+    \position, \affiliation\\[0.1cm]
+    \email $~\cdot~$ \phone $~\cdot~$ \website\\[0.5cm]
+\end{centering}
+
+% =========================== EDUCATION ================================ %
+
+\heading{Education}
+
+% \begin{tabularx}{\textwidth}{@{}p{0.9\textwidth} XX@{}R{0.1\textwidth}}
+% \textbf{PhD} in Geophysics, University of British Columbia & \multirow{2}{2cm}{2012 -- \\ present}\\
+% % $\quad$ University of British Columbia & \\
+% $\quad$ Supervisor: Dr. Douglas Oldenburg & \\
+% $\quad$ Thesis: \emph{Monitoring Hydraulic Fracturing with Electromagnetic Geophysics} & \\
+% \end{tabularx}
+
+\begin{entryright}
+2012 -- present & \textbf{PhD} in Geophysics, University of British Columbia\\
+& \myindent{Supervisor: Dr. Douglas Oldenburg}\\
+& \myindent{Thesis: \emph{Monitoring Hydraulic Fracturing with Electromagnetic Geophysics}}
+\end{entryright}
+
+\begin{entryright}
+ 2008 -- 2012 & \textbf{BSc} with Honors in Geophysics, University of Alberta \\
+& \myindent{First Class Honors}  \\
+& \myindent{GPA: 4.0 / 4.0}
+\end{entryright}
+
+
+% =========================== EXPERIENCE ================================ %
+\heading{Professional Experience}
+
+\begin{entryright}
+    \tworow{Apr. 2016 -- \\ Sept. 2017} & \textbf{Aranz Geo Canada Limited} (Calgary, AB) \\
+    & Computational Geophysics Consultant (part-time)\\
+    & \begin{myitemize}
+        \item Consulting on software architecture and user interface design for Steno3D, a technical communication and 3D visualization software product
+        \item Technical writing and editing, including internal reports and abstracts for scientific conferences
+    \end{myitemize}
+\end{entryright}
+
+
+\begin{entryright}
+    \tworow{Nov. 2015 -- \\ Apr. 2016} & \textbf{3point Science Inc} (Calgary, AB) \\
+    & Computational Geophysicist (part-time) \\
+    & \begin{myitemize}
+        \item Consulting on the development and design of interactive 3D visualization software for the geosciences
+    \end{myitemize}
+\end{entryright}
+
+
+\begin{entryright}
+    \tworow{Jun. 2014 -- \\ Aug. 2014} & \textbf{Schlumberger Doll Research} (Boston, MA) \\
+    & Geophysics Intern \\
+    & \begin{myitemize}
+        \item Supervisor: Dr. Dzevat Omeragic
+        \item Examined upscaling techniques and performed numerical simulations to investigate the feasibility of electromagnetic imaging of complex hydraulic fractures
+    \end{myitemize}
+\end{entryright}
+
+
+\begin{entryright}
+    \tworow{Jun. 2013 -- \\ Aug. 2013} & \textbf{Schlumberger Electromagnetic Imaging} (Richmond, CA) \\
+    & Geophysics Intern \\
+    & \begin{myitemize}
+        \item Supervisor: Dr. Michael Wilt
+        \item Developed a workflow for mapping hydraulic fractures using cross-well electromagnetic surveys
+        \item Awarded the patent: ``Determining proppant and fluid distribution'' (US Patent App. 14/494,313) which was developed from this work
+    \end{myitemize}
+\end{entryright}
+
+
+
+\begin{entryright}
+    \tworow{May 2012 -- \\ Aug. 2012} & \textbf{ConocoPhillips Canada} (Calgary, AB) \\
+    & Geophysics Summer Student \\
+    & \begin{myitemize}
+        \item Supervisor: Richard Forest
+        \item Interpreted 3D seismic volumes covering 8 townships in Western Canada by tying synthetic seismograms, mapping seismic horizons, and examining seismic attributes.
+        \item Worked with geologists and reservoir engineers to map a potential natural gas resource and propose a drilling location
+    \end{myitemize}
+\end{entryright}
+
+
+
+\begin{entryright}
+    \tworow{May 2011 -- \\ Aug. 2011} & \textbf{Alfred Wegener Institute of Polar and Marine Research} (Bremerhaven, Germany) \\
+    & Geophysics Summer Student \\
+    & \begin{myitemize}
+        \item Conducted numerical simulations to generate velocity profiles and estimate transport of the Antarctic Circumpolar Current south of Africa
+        \item This project was funded through the Research Internships in Science and Engineering (RISE) program of the German Academic Exchange Service (DAAD)
+        % \item Attended a program-wide meeting of interns from Canada, the United States, and the United Kingdom, discussing research programs and collaboration opportunities in Germany
+    \end{myitemize}
+\end{entryright}
+
+
+% =========================== TEACHING ================================ %
+
+\heading{Teaching Assistantships}
+
+\begin{entryright}
+2013 -- 2016 & \textbf{EOSC 350:  Environmental, Geotechnical, and Exploration Geophysics I} \\
+& University of British Columbia \\
+& \begin{myitemize}
+    \item Instructor: Dr. Douglas Oldenburg
+    \item Developed labs and assignments, including interactive numerical simulations for labs
+    \item Coordinated content and website upgrades for the web-based resource ``Geophysics for Practicing Geoscientists'' (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
+    \item Worked with a Teaching Assistant Team of 5-6 members to instruct labs, mark assignments \& exams for 50-60 geology and engineering students
+\end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+2015 & \textbf{Directed Studies: Inversion in Applied Geophysics} \\
+& University of British Columbia \\
+& \begin{myitemize}
+    \item Instructor: Dr. Douglas Oldenburg
+    \item Provided guidance for an undergraduate student in his independent study. He developed Jupyter Notebook Tutorials on the basics of geophysical inversions (\href{https://github.com/jokulhaup/directed_studies}{https://github.com/jokulhaup/directed\_studies})
+\end{myitemize}
+\end{entryright}
+
+
+\begin{entryright}
+2012 & \textbf{EOSC 354: Analysis of Time Series and Inverse Theory for Earth Scientists} \\
+& University of British Columbia \\
+& \begin{myitemize}
+    \item Instructor: Dr. Michael Bostock
+    \item Instructed labs, marked labs and assignments for a class of 14 geophysics students
+\end{myitemize}
+\end{entryright}
+
+
+% =========================== Service ================================ %
+\heading{Service and Outreach}
+
+\begin{entryright}
+2017 & \textbf{Journal of Open Source Software} \\
+& Editor: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
+\end{entryright}
+
+% \begin{tabular}{p{13cm} R{2.75cm}}
+% \textbf{Syzygy Data \& Computing, a CFI Cyber infrastructure Proposal} & 2017 \\[0.1cm]
+% Canada Foundation for Innovation (CFI) Grant Application &\\
+% \end{tabular}
+% \begin{tabular}{p{0.05cm} p{13.5cm}}
+% & Proposal Committee Member \\
+% & Principal Investigator: Dr. Michael Lamoureux, University of Calgary \\
+% & Syzygy: \href{http://syzygy.ca/}{http://syzygy.ca/}, CFI: \href{https://www.innovation.ca/}{https://www.innovation.ca/}
+% \end{tabular}
+
+% \begin{itemize}
+%     \item Principal Investigator: Dr. Michael Lamoureux, University of Calgary
+%     % % \vspace{-6px}
+%     \item Proposal Committee Member
+%     % % \vspace{-6px}
+%     \item Syzygy: \href{http://syzygy.ca/}{http://syzygy.ca/}, CFI: \href{https://www.innovation.ca/}{https://www.innovation.ca/}\\
+% \end{itemize}
+
+% % \vspace{7px}
+
+\begin{entryright}
+    2017 & \textbf{Society of Exploration Geophysics Distinguished Instructor Short Course 2017} \\
+    & Support Instructor for \emph{Geophysical Electromagnetics: Fundamentals and Applications} by Dr. Douglas Oldenburg (\href{http://disc2017.geosci.xyz}{http://disc2017.geosci.xyz}) \\
+    & \begin{myitemize}
+        \item{Included generating course material, leading tutorials on numerical simulations and inversions for electromagnetics, addressing questions from participants, documenting the events and participant presentations on a blog (\href{https://medium.com/disc2017}{https://medium.com/disc2017}) and developing and maintaining the course website (\href{https://disc2017.geosci.xyz}{https://disc2017.geosci.xyz})}
+        \item{Locations for which I was a support instructor:
+            \begin{myitemize}
+                \vspace{0.05cm}
+                \item Denver, USA (January 30-31, 2017)
+                \item Perth, Australia (July 27-28, 2017)
+                \item Adelaide, Australia (August 2-3, 2017)
+                \item Brisbane, Austraila (August 7-8, 2017)
+                \item Delft, Netherlands (September 11-12, 2017)
+                \item Bonn, Germany (September 18-19, 2017)
+                \item Vienna, Austria (September 21-22, 2017)
+                \item Zurich, Switzerland (September 26-27, 2017)
+                \item Aarhus, Denmark (October 2-3, 2017)
+                \item Toronto, Canada (October 27, 2017)
+                \item Mexico City, Mexico (November 6-7, 2017)
+                \item Buenos Aires, Argentina (November 13-14, 2017)
+                \item Santiago, Chile (November 16-17, 2017)
+                \item Santa Cruz de la Sierra, Bolivia (November 22-23, 2017) - Cancelled
+                \item Rio de Janeiro, Brazil (November 28-29, 2017)
+                \item Calgary, Canada (December 5-6, 2017)
+                \item Vancouver, Canada (December 12-13, 2017)
+            \end{myitemize}
+        }
+    \end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+    2017 & \textbf{JupyterCon}, August 22-25, New York, NY \\
+    & Program Committee Member (\href{https://conferences.oreilly.com/jupyter/jup-ny}{https://conferences.oreilly.com/jupyter/jup-ny}) \\
+    & \begin{myitemize}
+        \item{This was the inaugural year for JupyterCon}
+        \item{Committee responsibilities included: reviewing abstracts, outreach to potential speakers, event promotion}
+    \end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+    2016 & \textbf{Banff International Research Station: Geophysical Simulation and Inversion Workshop}, August 19-21, Banff, AB  \\
+    & Supporting Organizer with Dr. Douglas Oldenburg, Dr. Adam Pidlisecky and Rowan Cockett (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695})
+\end{entryright}
+
+\begin{entryright}
+2014 -- present & \textbf{GeoSci.xyz} \\
+& Core maintainer and contributor to online interactive textbooks for geophysics (\href{http://geosci.xyz}{http://geosci.xyz}). Resources include: \\
+& \begin{myitemize}
+    \item Geophysics for Practicing Geoscientists (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
+    \item Electromagnetic Geophysics (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
+    \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
+\end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+2014 -- present & \textbf{SimPEG} \\
+& Core maintainer and contributor to the open source software (\href{https://github.com/simpeg}{https://github.com/simpeg}) \\
+& Community developer including leading weekly meetings and fielding user questions (google group: \href{https://groups.google.com/forum/\#!forum/simpeg}{https://groups.google.com/forum/\#!forum/simpeg}, slack: \href{http://slack.simpeg.xyz}{http://slack.simpeg.xyz})
+\end{entryright}
+
+\begin{entryright}
+2014 -- 2015 & \textbf{Undergraduate Research Mentor} \\
+& Advised Mohamed Rassas on as a part of the Undergraduate Research Opportunities Research Experience Program at the University of British Columbia\\
+& \begin{myitemize}
+    \item His work resulted in the presentation \emph{A comparison of conventional and open channel hydraulic fracturing and the importance of imaging to optimize the fracturing process} at the Multidisciplinary Undergraduate Research Conference at the University of British Columbia
+\end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+2005 -- 2009 & \textbf{Volunteer Instructor: Alberta Diploma Exam Reviews} \\
+& Developed and delivered review courses for Physics 30, Chemistry 30, Pure Math 30\\
+& Supervised by Mr. David Westra
+\end{entryright}
+
+
+
+
+
+
+% =========================== CONTRIBUTIONS ================================ %
+
+\heading{Publications}
+
+% \bibliography{./refs/lindseyrefs}
+\nobibliography{./refs/lindseyrefs}
+\bibliographystyle{seg}
+
+\subheading{Peer Reviewed Publications}
+
+    \begin{myenumerate}
+        \item \bibentry{heagy2017electromagnetics}
+        \item \bibentry{CaudilloMata2016}
+        \item \bibentry{cockett2015simpeg}
+    \end{myenumerate}
+
+% \subheading{Peer Reviewed Publications (submitted or in review)}
+
+%     \begin{myenumerate}
+%         \item \bibentry{Heagy2016}
+%     \end{myenumerate}
+
+\subheading{Non Peer Reviewed Publications}
+
+    \begin{myenumerate}
+        \item \bibentry{kang2017}
+        \item \bibentry{Cockett2016}
+    \end{myenumerate}
+
+\subheading{Patents}
+
+    \begin{myenumerate}
+        \item \bibentry{wilt2014determining}
+    \end{myenumerate}
+
+% \subheading{Non-Peer Reviewed Publications}
+
+
+
+\subheading{Conference Proceedings}
+
+    \vspace{-0.2cm}
+    ~($*$ : invited,  $\dagger$ : award)
+    \vspace{0.3cm}
+
+    \begin{myenumerate}
+        \item \bibentry{heagy2017}
+        \item $*$ \bibentry{kang2016}
+        \item $*$ \bibentry{heagy2016a}
+        \item $*$ \bibentry{heagy2016b}
+        \item \bibentry{yang20163d}
+        \item \bibentry{heagy2015simpegem}
+        \item \bibentry{heagy2015real}
+        \item \bibentry{cockett2015development}
+        \item \bibentry{heagy2015modelling}
+        \item \bibentry{kang2015moving}
+        \item \bibentry{cockett2014simpeg}
+        \item \bibentry{heagy2014parametrized}
+        \item \bibentry{caudillo2014numerical}
+        \item \bibentry{fournier2014multi}
+        \item \bibentry{devriese2014magnetic}
+        \item \bibentry{wilt2014hydrofracture}
+        \item{$\dagger$ \bibentry{heagy2014does} \\ $~\quad ^\dagger$ Student Honourable Mention Integrated Poster}
+        \item{$\dagger$ \bibentry{heagy2013investigating} \\  $~\quad ^\dagger$ Award of Merit (Best Student Paper, Annual Meeting)}
+    \end{myenumerate}
+
+\subheading{Other Conference Presentations}
+
+    \begin{myenumerate}
+        \item \bibentry{heagy2017jupytercon}
+        \item \bibentry{heagy2017bcgs}
+        \item \bibentry{heagy2016scipy}
+        \item \bibentry{heagy2015scipy}
+        \item \bibentry{rosenkjaer2015scipy}
+        \item{$*$ \bibentry{heagy2014dnp} \\ $~\quad ^*$ Invited to ``Best of the Development and Production Forum'' at the SEG 2014 Annual Meeting}
+    \end{myenumerate}
+
+
+\heading{Software Contributions}
+
+\begin{entryright}
+2014 -- present & \textbf{SimPEG} \\
+& \myindent{Software for numerical simulations and inversions in geophysics} \\
+& \myindent{\href{https://github.com/simpeg/simpeg}{https://github.com/simpeg/simpeg}}
+\end{entryright}
+
+\begin{entryright}
+2014 -- present & \textbf{discretize} \\
+& \myindent{Discretization tools for finite volume and inverse problems} \\
+& \myindent{\href{https://github.com/simpeg/discretize}{https://github.com/simpeg/discretize}}
+\end{entryright}
+
+\begin{entryright}
+2016 -- present & \textbf{geoana} \\
+& \myindent{Analytic solutions in geophysics}\\
+& \myindent{\href{https://github.com/simpeg/geoana}{https://github.com/simpeg/geoana}}
+\end{entryright}
+
+% =========================== AWARDS ================================ %
+
+\heading{Awards and Scholarships}
+
+\begin{entryright}
+2016 & \textbf{UBC Library: Innovative Dissemination of Research Award}  \\
+& \myindent{Awarded for the SimPEG framework and community development ($\$1,000$). With Rowan Cockett and Seogi Kang.}
+\end{entryright}
+
+\begin{entryright}
+2014 -- 2017 & \textbf{NSERC Vanier Scholarship} \\
+& \myindent{Vanier Scholars demonstrate leadership skills and a high standard of scholarly achievement in graduate studies in the social sciences and/or humanities, natural sciences and/or engineering and health. The Vanier Scholarship is the top graduate scholarship in Canada. ($ \$50,000 \times 3$)}
+\end{entryright}
+
+\begin{entryright}
+2014 -- 2017 & \textbf{Alexander Graham Bell Canada Graduate Scholarship} \\
+& \myindent{Awarded to high caliber scholars who are engaged in a doctoral program in the natural sciences or engineering (Declined) ($ \$35,000 \times 3$)}
+\end{entryright}
+
+\begin{entryright}
+2014 -- 2018 & \textbf{Four Year Fellowship (FYF) for PhD Students} \\
+& \myindent{Selection based on academic excellence, upon the recommendation of the graduate program at UBC ($\$18,000 \times 4$, declined 3/4)}
+\end{entryright}
+
+\begin{entryright}
+2013 & \textbf{Special UBC Graduate Scholarship - W.H. Mathews Scholarship} \\
+& \myindent{Awarded for academic achievement in Earth, Ocean and Atmospheric Sciences at UBC ($\$5,000$)}
+\end{entryright}
+
+\begin{entryright}
+2012 & \textbf{Governor General’s Silver Medal} \\
+& \myindent{Awarded annually to the three undergraduate students (institution-wide) who achieve the highest academic standing overall upon graduation from his/her Bachelor degree program (University of Alberta)}
+\end{entryright}
+
+\begin{entryright}
+2012 & \textbf{Lieutenant-Governor’s Gold Medal} \\
+& \myindent{Awarded to the convocating student from an Honours program in the Faculty of Science who has shown the highest distinction in scholarship (University of Alberta)}
+\end{entryright}
+
+\begin{entryright}
+2012 & \textbf{APEGGA Past Presidents’ Medal in Geophysics} \\
+& \myindent{Awarded to the convocating student who is a Canadian Citizen or Permanent Resident with the highest academic standing in a specialization or honours program in Geophysics on the basis of the final year}
+\end{entryright}
+
+\begin{entryright}
+2011 & \textbf{The APEGGA Scholarship in Geophysics} \\
+& \myindent{Awarded on the basis of superior academic achievement in Honors Geophysics or Specialization in Geophysics ($\$3,000 \times 2$)}
+\end{entryright}
+
+\begin{entryright}
+2010 -- 2012 & \textbf{The David K Robertson Award in Geophysics and Geology} \\
+& \myindent{Awarded to a student entering the third year of a BSc Specializing in Geology or Geophysics on the basis of passion and talent in their field of study, demonstrated leadership, participation in extracurricular activities, and academic standing. ($\$5,000 \times 2$)}
+\end{entryright}
+
+\begin{entryright}
+2010 -- 2012 & \textbf{The Encana Geology and Geophysics Scholarship} \\
+& \myindent{Awarded to student(s) with superior academic achievement entering the third or fourth year of study for a Bachelor of Science with a major in Geology or Geophysical Sciences. ($\$3,500 \times 2$)}
+\end{entryright}
+
+\begin{entryright}
+2009 -- 2011 & \textbf{Louise McKinney Post Secondary Scholarship, Government of Alberta} \\
+& \myindent{Recognizes students for their academic achievements at a provincial level and encourages them to continue in their undergraduate program of study ($\$2,500 \times 3$)}
+\end{entryright}
+
+\begin{entryright}
+2009 & \textbf{Pearl Cuthbertson Memorial Award} \\
+& \myindent{Awarded to a student entering the second year of study for a Bachelor of Science degree who has completed Science 100. Selection based on academic standing and demonstrated determination, curiosity and enthusiasm for science. ($\$2,000 \times 2$)}
+\end{entryright}
+
+\begin{entryright}
+2009 & \textbf{Pearson Book Prize}\\
+& \myindent{Awarded for academic achievement in Writing Studies in Science 100}
+\end{entryright}
+
+\begin{entryright}
+2008 -- 2012 & \textbf{Dean's Honor Roll, University of Alberta} \\
+& \myindent{Awarded for academic achievement ($\times 4$)}
+\end{entryright}
+
+
+% =========================== Grants ================================ %
+
+\heading{Grants}
+
+\begin{entryright}
+2014 & \textbf{Science Center for Learning and Teaching - Development Grant} \\
+& \myindent{Development of online interactive resources for undergraduate geophysics at UBC ($\$2,500$)} \\
+& \myindent{Principal Investigator: Dr. Douglas Oldenburg} \\
+\end{entryright}
+
+
+% =========================== Grants ================================ %
+
+\heading{Media}
+
+\begin{entryright}
+Apr. 24, 2017 & Guest on Episode 41, \emph{Undersampled Radio} by Graham Ganssle and Matt Hall (\href{https://undersampledrad.io/home/2017/4/inverterizer}{https://undersampledrad.io})
+\end{entryright}
+
+\begin{entryright}
+Jan. 24, 2017 & Guest on Episode 11, \emph{Seismic Soundoff} by the Society of Exploration Geophysicists (\href{http://seg.org/podcast/Post/4610/Episode-11-Geophysical-Electromagnetics-2017-DISC}{http://seg.org/podcast})
+\end{entryright}
+
+\begin{entryright}
+Jun. 7, 2012 & Article: \emph{Science 100 pioneer grounded in geophysics - University of Alberta Spring Convocation 2012: Celebrating Talented People} (\href{https://www.ualberta.ca/news-and-events/newsarticles/2012/06/science100pioneergroundedingeophysics}{https://www.ualberta.ca/news-and-events/newsarticles})
+\end{entryright}
+
+% \begin{tabular}{p{2.5cm} p{12cm}}
+%     Apr. 24, 2017 & Guest on Episode 41, \emph{Undersampled Radio} by Graham Ganssle and Matt Hall (\href{https://undersampledrad.io/home/2017/4/inverterizer}{https://undersampledrad.io})\\[0.2cm]
+%     Jan. 24, 2017 & Guest on Episode 11, \emph{Seismic Soundoff} by the Society of Exploration Geophysicists (\href{http://seg.org/podcast/Post/4610/Episode-11-Geophysical-Electromagnetics-2017-DISC}{http://seg.org/podcast})\\[0.2cm]
+%     Jun. 7, 2012 & Article: \emph{Science 100 pioneer grounded in geophysics - University of Alberta Spring Convocation 2012: Celebrating Talented People} (\href{https://www.ualberta.ca/news-and-events/newsarticles/2012/06/science100pioneergroundedingeophysics}{https://www.ualberta.ca/news-and-events/newsarticles}) \\[0.2cm]
+% \end{tabular} \\[0.2cm]
+
+% \subsection{Outreach and Other Contributions}
+
+    % \begin{enumerate}
+    %     \item{ 2015--}
+    %     \item \bibentry{emgeosci}
+    %     % \item \bibentry{gpg}
+    %     % \item \bibentry{simpegsoftware}
+    % \end{enumerate}
+
+
+\heading{Professional Development}
+
+
+\subheading{Conferences Attended}
+
+\begin{entryright}
+    2017         & EM-6: The 6th International Symposium in Three-Dimensional Electromagnetics
+\end{entryright}
+
+\begin{entryright}
+    2016         & FORCE11: The Future of Research Communications and e-Scholarship Meeting
+\end{entryright}
+
+\begin{entryright}
+    2015 -- 2016 & (2) SciPy Conference
+\end{entryright}
+
+\begin{entryright}
+    2014 -- 2015 & (2) British Columbia Geophysical Society EM Workshop
+\end{entryright}
+
+\begin{entryright}
+    2014         & SEG Development and Production Forum
+\end{entryright}
+
+\begin{entryright}
+    2014         & GeoConvention
+\end{entryright}
+
+\begin{entryright}
+    2014 -- 2016 & (3) AGU Annual General Meeting
+\end{entryright}
+
+\begin{entryright}
+    2011 -- 2016 & (6) Society of Exploration Geophysics Annual Meeting
+\end{entryright}
+
+
+
+\subheading{Courses Attended}
+
+\begin{entryright}
+    2015 & \emph{Presenting Data and Information} by Edward Tufte
+\end{entryright}
+
+\begin{entryright}
+    2014 & SEG Distinguished Instructor Short Course: \emph{Microseismic Imaging of Hydraulic Fracturing: Improved Engineering of Unconventional Shale Reservoirs} by Shawn Maxwell
+\end{entryright}
+
+% \nobibliography{lindseyrefs}
+\bibliographystyle{seg}
+% \bibliographystyle{}
+\end{document}
