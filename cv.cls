@@ -28,6 +28,7 @@
 \RequirePackage{color}
 \RequirePackage{bibentry}
 \RequirePackage{titlesec}
+\RequirePackage[utf8]{inputenc}
 % \RequirePackage{longtable}
 
 % Nice tables
@@ -47,7 +48,7 @@
 \definecolor{Mygreen}{rgb}{0,0.3,0}
 \usepackage[colorlinks=true,linkcolor=Myblue,citecolor=Mygreen,urlcolor=Myblue,bookmarks=true]{hyperref}
 
-
+\pagenumbering{arabic}
 
 % ==== Document setup ==== %
 
@@ -58,7 +59,9 @@
 \renewcommand{\headrulewidth}{0pt}
 
 \AtBeginDocument{%
+% \maketitle
 \thispagestyle{empty}
+% \pagestyle{empty}
 % \begin{flushleft}
 }
 \endinput

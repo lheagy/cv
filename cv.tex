@@ -1,5 +1,4 @@
 \documentclass[oneside]{cv}
-
 % \usepackage{biblatex}
 
 % standard packages
@@ -7,6 +6,7 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{enumitem}
+\usepackage{lastpage}
 % Define command to insert month name and year as date
 \usepackage{datetime}
 \newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
@@ -125,10 +125,12 @@
     \monthyear\today
 }
 
+\pagenumbering{arabic}
+\cfoot{\HelveticaNeueUltraLight\thepage \hspace{1pt} of \pageref{LastPage} }
+
 \begin{document}
 \hyphenpenalty=100000
 \exhyphenpenalty=1000000
-
 % =========================== PERSONAL INFO ================================ %
 
 \begin{centering}
@@ -137,7 +139,6 @@
     \position, \affiliation\\[0.1cm]
     \email $~\cdot~$ \phone $~\cdot~$ \website\\[0.5cm]
 \end{centering}
-
 % =========================== EDUCATION ================================ %
 
 \heading{Education}
@@ -152,7 +153,9 @@
 \begin{entryright}
 2012 -- present & \textbf{PhD} in Geophysics, University of British Columbia\\
 & \myindent{Supervisor: Dr. Douglas Oldenburg}\\
-& \myindent{Thesis: \emph{Monitoring Hydraulic Fracturing with Electromagnetic Geophysics}}
+& \myindent{Thesis: \emph{Electromagnetic methods for imaging subsurface injections
+}} \\
+& \myindent{intended submission: June 1, 2018}
 \end{entryright}
 
 \begin{entryright}
@@ -268,7 +271,7 @@
 \heading{Service and Outreach}
 
 \begin{entryright}
-2017 & \textbf{Journal of Open Source Software} \\
+2017 -- present & \textbf{Journal of Open Source Software} \\
 & Editor: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
 \end{entryright}
 
@@ -323,6 +326,16 @@
 \end{entryright}
 
 \begin{entryright}
+    2017 & \textbf{American Geophysical Union (AGU) Annual Meeting Session Organizer: Open Source Software in the Geosciences} \\
+    & Member of the organizing comittee along with Anna Kelbert, Luz Andelica Caudillo Mata, Jared Peacock, Suzan van der Lee, Juan Lorenzo, and Louise Pellerin \\
+    & \begin{myitemize}
+        \item{Selected invited panelists for panel discussion (recording available at: \href{https://youtu.be/0GO4ZZ5Ry6M}{https://youtu.be/0GO4ZZ5Ry6M})}
+        \item{Drafted discussion questions for the panel and reviewed abstract submissions}
+        \item{Follow up includes discussion within the AGU to elevate the visibility and support for open source software within the AGU}
+    \end{myitemize}
+\end{entryright}
+
+\begin{entryright}
     2017 & \textbf{JupyterCon}, August 22-25, New York, NY \\
     & Program Committee Member (\href{https://conferences.oreilly.com/jupyter/jup-ny}{https://conferences.oreilly.com/jupyter/jup-ny}) \\
     & \begin{myitemize}
@@ -333,7 +346,19 @@
 
 \begin{entryright}
     2016 & \textbf{Banff International Research Station: Geophysical Simulation and Inversion Workshop}, August 19-21, Banff, AB  \\
-    & Supporting Organizer with Dr. Douglas Oldenburg, Dr. Adam Pidlisecky and Rowan Cockett (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695})
+    & Supporting Organizer with Dr. Douglas Oldenburg, Dr. Adam Pidlisecky and Rowan Cockett (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695}) \\
+    & \begin{myitemize}
+        \item{Awarded a 2 day workshop  at the Banff International Research Station}
+        \item{
+            Invited 25 researchers and graduate students from 5 universities across
+            Canada and the United States to discuss strategies for integration and cross-disciplinary
+            communication between each of the sub-disciplines of geophysics.
+        }
+        \item{
+            Much of the discussion focussed on using the open-source software framework SimPEG as a
+            tangible means of building a community of researchers across the various disciplines of geophysics
+        }
+    \end{myitemize}
 \end{entryright}
 
 \begin{entryright}
@@ -342,27 +367,32 @@
 & \begin{myitemize}
     \item Geophysics for Practicing Geoscientists (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
     \item Electromagnetic Geophysics (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
-    \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
+    % \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
 \end{myitemize}
 \end{entryright}
 
 \begin{entryright}
 2014 -- present & \textbf{SimPEG} \\
-& Core maintainer and contributor to the open source software (\href{https://github.com/simpeg}{https://github.com/simpeg}) \\
-& Community developer including leading weekly meetings and fielding user questions (google group: \href{https://groups.google.com/forum/\#!forum/simpeg}{https://groups.google.com/forum/\#!forum/simpeg}, slack: \href{http://slack.simpeg.xyz}{http://slack.simpeg.xyz})
+& Core maintainer and community developer (\href{https://github.com/simpeg}{https://github.com/simpeg}) \\
+& \begin{myitemize}
+    \item{Contribute code, review pull requests, and provide input on development plans}
+    \item{Organize weekly meetings (all are recorded: \href{https://www.youtube.com/playlist?list=PLhlr7wwe--P8_C31vq6s1INnad7lf6V51}{https://www.youtube.com/playlist?list=PLhlr7wwe--P8\_C31vq6s1INnad7lf6V51})}
+    \item{Support users by answering questions on the google group (\href{https://groups.google.com/forum/\#!forum/simpeg}{https://groups.google.com/forum/\#!forum/simpeg}) and slack channel (\href{http://slack.simpeg.xyz}{http://slack.simpeg.xyz})}
+    \item{Maintain the SimPEG blog (\href{https://medium.com/simpeg}{https://medium.com/simpeg})}
+\end{myitemize}
 \end{entryright}
 
 \begin{entryright}
 2014 -- 2015 & \textbf{Undergraduate Research Mentor} \\
 & Advised Mohamed Rassas on as a part of the Undergraduate Research Opportunities Research Experience Program at the University of British Columbia\\
 & \begin{myitemize}
-    \item His work resulted in the presentation \emph{A comparison of conventional and open channel hydraulic fracturing and the importance of imaging to optimize the fracturing process} at the Multidisciplinary Undergraduate Research Conference at the University of British Columbia
+    \item His work resulted in the presentation: \emph{A comparison of conventional and open channel hydraulic fracturing and the importance of imaging to optimize the fracturing process} at the Multidisciplinary Undergraduate Research Conference at the University of British Columbia
 \end{myitemize}
 \end{entryright}
 
 \begin{entryright}
 2005 -- 2009 & \textbf{Volunteer Instructor: Alberta Diploma Exam Reviews} \\
-& Developed and delivered review courses for Physics 30, Chemistry 30, Pure Math 30\\
+& Developed and delivered review courses for Physics 30, Chemistry 30, Pure Math 30 in the Alberta high school curricumum\\
 & Supervised by Mr. David Westra
 \end{entryright}
 
@@ -387,11 +417,11 @@
         \item \bibentry{cockett2015simpeg}
     \end{myenumerate}
 
-% \subheading{Peer Reviewed Publications (submitted or in review)}
+\subheading{Peer Reviewed Publications (submitted or in review)}
 
-%     \begin{myenumerate}
-%         \item \bibentry{Heagy2016}
-%     \end{myenumerate}
+    \begin{myenumerate}
+        \item \bibentry{cockett2018richards}
+    \end{myenumerate}
 
 \subheading{Non Peer Reviewed Publications}
 
@@ -451,6 +481,8 @@
 
 \heading{Software Contributions}
 
+I contribute to a number of open-source software projects, all of which are accessible through my GitHub profile \href{https://github.com/lheagy}{https://github.com/lheagy}. The major projects I contribute to are:
+\\
 \begin{entryright}
 2014 -- present & \textbf{SimPEG} \\
 & \myindent{Software for numerical simulations and inversions in geophysics} \\
@@ -555,7 +587,7 @@
 
 \begin{entryright}
 2014 & \textbf{Science Center for Learning and Teaching - Development Grant} \\
-& \myindent{Development of online interactive resources for undergraduate geophysics at UBC ($\$2,500$)} \\
+& \myindent{For development of online interactive resources for undergraduate geophysics at the University of British Columbia ($\$2,500$)} \\
 & \myindent{Principal Investigator: Dr. Douglas Oldenburg} \\
 \end{entryright}
 
@@ -575,6 +607,7 @@ Jan. 24, 2017 & Guest on Episode 11, \emph{Seismic Soundoff} by the Society of E
 \begin{entryright}
 Jun. 7, 2012 & Article: \emph{Science 100 pioneer grounded in geophysics - University of Alberta Spring Convocation 2012: Celebrating Talented People} (\href{https://www.ualberta.ca/news-and-events/newsarticles/2012/06/science100pioneergroundedingeophysics}{https://www.ualberta.ca/news-and-events/newsarticles})
 \end{entryright}
+
 
 % \begin{tabular}{p{2.5cm} p{12cm}}
 %     Apr. 24, 2017 & Guest on Episode 41, \emph{Undersampled Radio} by Graham Ganssle and Matt Hall (\href{https://undersampledrad.io/home/2017/4/inverterizer}{https://undersampledrad.io})\\[0.2cm]
@@ -596,6 +629,13 @@ Jun. 7, 2012 & Article: \emph{Science 100 pioneer grounded in geophysics - Unive
 
 
 \subheading{Conferences Attended}
+\begin{entryright}
+    2017         & Exploration '17
+\end{entryright}
+
+\begin{entryright}
+    2017         & JupyterCon
+\end{entryright}
 
 \begin{entryright}
     2017         & EM-6: The 6th International Symposium in Three-Dimensional Electromagnetics
@@ -606,7 +646,7 @@ Jun. 7, 2012 & Article: \emph{Science 100 pioneer grounded in geophysics - Unive
 \end{entryright}
 
 \begin{entryright}
-    2015 -- 2016 & (2) SciPy Conference
+    2015 -- 2017 & (3) SciPy Conference
 \end{entryright}
 
 \begin{entryright}
