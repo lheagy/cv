@@ -17,6 +17,7 @@
 
 % standard packages
 \setlength\parindent{0in}
+\usepackage{mathpazo}
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{enumitem}
@@ -79,7 +80,7 @@
 \newcommand{\firstname}{Lindsey}
 \newcommand{\middleinitial}{J.}
 \newcommand{\lastname}{Heagy}
-\newcommand{\initials}{L.J.}
+\newcommand{\initials}{L. J.}
 
 \newcommand{\emailaddress}{lindseyheagy@gmail.com}
 \newcommand{\email}{\href{mailto:\emailaddress}{\emailaddress}}
@@ -103,6 +104,11 @@
 \newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
 \newcommand{\youtube}[1]{\href{https://youtu.be/XY3Tq9Wd1\_A}{youtube: #1}}
 
+\newcommand{\geosci}{\href{https://geosci.xyz}{https://geosci.xyz}}
+\newcommand{\gpg}{\href{https://gpg.geosci.xyz}{https://gpg.geosci.xyz}}
+\newcommand{\emgeosci}{\href{https://em.geosci.xyz}{https://em.geosci.xyz}}
+\newcommand{\GeoSci}{\href{https://geosci.xyz}{GeoSci.xyz~}}
+
 % titles, headings, etc
 \newcommand{\mytitle}[1]{
     {%\HelveticaNeueLight
@@ -119,25 +125,20 @@
 }
 
 \newcommand{\heading}[1]{
-\begin{samepage}
-    \vspace{0.5cm}
-    {%\HelveticaNeueLight
-    % \fontsize{16pt}{0}\selectfont
-    \LARGE
-    #1}\\
+    \begin{minipage}[t]{\textwidth}
+    \vspace{0.45cm}
+    {\LARGE #1}\\
     \vspace{-0.2cm}
     \hrule
+    \end{minipage}
     \vspace{0.2cm}
-\end{samepage}
+
 }
 
 \newcommand{\subheading}[1]{
-    \vspace{0.3cm}
-    {%\HelveticaNeueLight
-    % \fontsize{14pt}{0}\selectfont
-    \Large
-    #1}\\
-    \vspace{0.0cm}
+    \vspace{0.4cm}
+    {\Large #1}\\
+    \vspace{-0.2cm}
 }
 
 \newcommand{\tworow}[1]{\multirow{2}{2.2cm}{#1}}
@@ -149,6 +150,7 @@
         \BODY
     \end{tabularx}
     \vspace{-0.2cm}
+
 }
 
 \usepackage{environ}
@@ -163,15 +165,6 @@
 \newenvironment{myquote}%
   {\list{}{\leftmargin=0.5cm\rightmargin=0cm}\item[]}%
   {\endlist}
-
-
-% \newcommand{\myindent}[1]{
-%     \begin{myquote}
-%     \vspace{-0.7cm}
-%         #1
-%     \vspace{-0.4cm}
-%     \end{myquote}
-% }
 
 \NewEnviron{myitemize}{
     \vspace{-0.2cm}
@@ -191,8 +184,6 @@
 
 % set header
 \chead{
-    % \HelveticaNeueUltraLightItalic
-    % \fontsize{10pt}{12pt}
     \footnotesize
     \emph{
         \shortname $~\cdot~$
@@ -203,7 +194,8 @@
 
 \pagenumbering{arabic}
 \cfoot{ %\HelveticaNeueUltraLight
-\thepage \hspace{1pt} of \pageref{LastPage} }
+\thepage \hspace{1pt} of \pageref*{LastPage}
+}
 
 \begin{document}
 \thispagestyle{empty}
@@ -235,17 +227,21 @@
 % =========================== EDUCATION ================================ %
 
 \heading{Research Interests}
-\subheading{Themes}
-\begin{myitemize}
-    \item{Computational and data-science techniques for geoscience problems relevant to society}
-    \item{Combining geophysical inversion strategies and statistical techniques to integrate heterogeneous data types (e.g. geophysical, geologic, hydrologic, and rock-physics data).}
-    \item{Interactive computing for data-driven interpretation}
-\end{myitemize}\vspace{0.2cm}
+
+I am interested in the intersection of geoscientific questions, data science techniques and interactive computing. Questions that cross disciplinary lines and include multiple data-types (e.g. geophysical, geologic, hydrologic and petrophysical) are of particular interest to me. As a mechanism to facilitate collaboration between researchers in different disciplines, I contribute to open-source scientific software and open educational resources. My background is in geophysical simulations and inversions.
+
+% \subheading{Themes}
+% \begin{myitemize}
+%     \item{Computational and data-science techniques for geoscience problems relevant to society}
+%     \item{Combining geophysical inversion strategies and statistical techniques to integrate heterogeneous data types (e.g. geophysical, geologic, hydrologic, and rock-physics data).}
+%     \item{Interactive computing for interpretation of geophysical and geoscientific data}
+% \end{myitemize}
 \subheading{Current Projects}
 \begin{myitemize}
     \item{Interactive, high-performance computing for geophysical simulations and inversions using Jupyter on NERSC}
-    \item{Machine learning in physics: examining neural networks for data governed by partial differential equations}
     \item{Electromagnetic geophysical methods in settings with large contrasts electrical and magnetic physical properties}
+    \item{Exploring the principled application of machine learning tools to problems constrained by physical models}
+    \item{Open source software for simulations and parameter estimation in geophysics}
 \end{myitemize}
 % =========================== EDUCATION ================================ %
 
@@ -262,7 +258,7 @@
 2012 -- 2018 & \textbf{PhD} in Geophysics, University of British Columbia\\
 & Thesis: Electromagnetic imaging for subsurface injections \\
 & Advisor: Douglas Oldenburg\\
-& Themes: inverse problems, numerical simulations, electromagnetics
+& Themes: inverse problems, numerical simulations, electromagnetics \\
 \end{entryright}
 
 \begin{entryright}
@@ -358,10 +354,277 @@
     % \fi
 \end{entryright}
 
+% =========================== Leadership  ================================ %
+\heading{Leadership in Open Science}
+\subheading{Project co-lead: SimPEG}
+
+SimPEG is an open-source software project for simulation and parameter estimation in geophysics (\href{https://simpeg.xyz}{simpeg.xyz}). Rowan Cockett led its initial creation in 2013 as a part of his thesis work. I have been an active contributor since 2014. In 2015, I took on a leadership role in the development, maintenance, and community support of the project, which I continue today. I review suggested changes to the code, advise on new developments, respond to issues, and lead weekly team meetings that discuss research and software development. Beyond research publications that include myself or Rowan, SimPEG has been used in at least 6 peer-reviewed publications, 8 conference proceedings, 1 thesis at the Colorado School of Mines, and 3 in-progress theses at the University of British Columbia.
 
 
+\subheading{Project co-creator: GeoSci.xyz}
+
+In 2013, myself, Douglas Oldenburg, and Rowan Cockett started the \GeoSci project. It is a collection of open-source web-based textbooks, including ``Geophysics for Practicing Geoscientists (GPG)'' (\gpg) and ``Electromagnetic Geophysics'' (\emgeosci), as well as a collection of interactive Jupyter notebooks for education (\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs}). I continue to serve as a content editor; I help outline content to be created and review updates and new submissions. \GeoSci resources are used as course material in at least 5 different universities and have been viewed by more than 160,000 users worldwide.
 
 
+\subheading{Open science community development and best practices}
+
+I am an editor with the Journal of Open Source Software (JOSS) where I facilitate peer-review of scientific software contributions and I have co-taught workshops on best practices in open source software development at the AGU annual meeting. In the broader open-source community, I participate in Project Jupyter, an open-source project for interactive computing. I have attended annual team meetings since 2017 and contribute to resources on the use of Jupyter in education\footnote{https://jupyter4edu.github.io/jupyter-edu-book}.
+
+\clearpage
+% =========================== Broader Impact ================================ %
+\heading{Metrics of Broad Impact}
+
+My scientific career, by nature of investing significant effort in the creation of open tools for geophysics which are used internationally by researchers, industry professionals, and educators, has a different impact profile that that of a researcher whose main output is purely publication-based. Here, I outline a few metrics of this broader impact. \vspace{0.3cm}
+
+\textbf{SimPEG user base}: The SimPEG slack community has 150 members, which represents the most committed and engaged SimPEG users. The full user base is likely much larger but this is difficult to quantify because of the open-source nature of the code. \vspace{0.3cm}
+
+%My estimate\footnote{SimPEG is open source and can be downloaded from multiple sources which cannot directly be tracked.} based on the number of community members on the SimPEG Slack group is $\sim$150. The download-count via PyPI (the Python Packaging Index) is over 800 according to \href{http://depsy.org/package/python/SimPEG}{depsy.org}. \vspace{0.3cm}
+
+\textbf{Institutions and companies using SimPEG}: Below is a sampling of some universities, national labs, geologic surveys and companies where SimPEG is being used. Where applicable, I have also included example publications where SimPEG is used.
+\begin{myitemize}\vspace{0.3cm}
+\item \textbf{Colorado School of Mines}: The DC resistivity and electromagnetic simulation and inversion are used by researchers in the Center for Gravity, Electrical, and Magnetic Studies (CGEM). For example, Par\'e \& Li (2017) examine the impact of different regularization choices in a DC resistivity inversion and Maag-Capriotti \& Li (2018) use the induced polarization simulation in a methodology study (\doi{10.1190/segam2017-17739005.1}, \doi{10.1190/segam2018-2998500.1}).
+
+\item \textbf{Dias Geophysical}: The DC resistivity and induced polarization codes are used to invert field data acquired by Dias in 3D.
+
+\item \textbf{Geologic Survey of New Zealand}: The potential fields codes (gravity, magnetics, self-potential) have been used in volcanology studies (Miller et al., 2017; Miller et al., 2018), \\ \doi{10.1016/j.epsl.2016.11.007}, \doi{10.1029/2018GL078780}
+
+\item \textbf{Lawrence Berkeley National Laboratory}: The electromagnetic simulations are used by researchers in the geophysics group to simulate how currents behave in settings with steel-cased wells (Wilt et al., 2018) \doi{10.1190/segam2018-2983425.1}
+
+\item \textbf{Rural Research Institute, Korea}: The DC resistivity code has been used for Dam integrity monitoring applications (Lim, 2017) \doi{10.7582/GGE.2018.21.1.008}.
+
+% \item \textbf{SJ Geophysics}: The DC resistivity and induced polarization codes are used to invert field data acquired by Dias in 3D.
+
+% \item \textbf{Stanford University}: The electromagnetic simulations and inversions are used by researchers in the
+
+\item \textbf{University of British Columbia}: Many of the researchers in Geophysical Inversion Facility contribute to the code-base and use it daily as a part of their research. For example, Abediab et al. (2018) invert magnetic data in a tectonic study; Astic \& Oldenburg (2017) develop an inversion approach which incorporates petrophysical information; and Kang et al. (2017) invert airborne electromagnetic data for electrical conductivity and chargeability. \doi{10.1016/j.tecto.2017.10.012}, \doi{10.1190/segam2018-2995155.1}, \doi{10.1190/INT-2016-0141.1}
+\end{myitemize}\vspace{0.3cm}
+
+\textbf{Universities using GeoSci.xyz}: Below, I provide a sampling of courses where GeoSci.xyz resources are a significant component of the course material.
+\begin{myitemize}\vspace{0.3cm}
+\item \textbf{Fresno State}: The GPG was used in EES 118/250T: Applied Geophysics in 2017
+\item \textbf{Southern University of Science and Technology (China)}: The GPG is used in ESS302: Applied Geophysics II (Gravity, Magnetic, Electrical and Well Logging)
+\item \textbf{University of Alabama}: The GPG is used in GEO 369: Introduction Geophysics,
+\item \textbf{University of British Columbia}: The GPG is used in EOSC 350: Environmental, Geotechnical, and Exploration Geophysics I
+\item \textbf{University of Houston}: EM GeoSci is used in GEOL 4397-03: Electromagnetic Methods for Exploration
+\end{myitemize}\vspace{0.3cm}
+
+\textbf{Society of Exploration Geophysics Distinguished Instructor Short Course}: EM GeoSci was the primary resource for the 2017 SEG DISC course on ``Geophysical Electromagnetics: Fundamentals and Applications,'' led by Douglas Oldenburg and co-instructed with myself and Seogi Kang. The course ran in 25 locations worldwide with $\sim$40 participants at each location.\vspace{0.3cm}
+
+\textbf{GeoSci.xyz web-traffic}: We began tracking metrics of use in April, 2016 using Google Analytics. The values below indicate views and new users since then.
+\begin{myitemize}\vspace{0.3cm}
+\item \textbf{Geophysics for Practicing Geoscientists (GPG)}: over 400,000 page-views and 80,000 users
+\item \textbf{Electromagnetic Geophysics}: over 440,000 page-views and 160,000 users
+\end{myitemize}\vspace{0.3cm}
+
+
+% =========================== Grants ================================ %
+
+\heading{Grants}
+\subheading{Pending}
+
+\begin{entryright}
+2019 & \textbf{Senior Personnel}: NSF - EarthCube Data Capabilities: Collaborative Proposal: Jupyter meets the Earth: Enabling discovery in geoscience through interactive computing at scale \\
+& PIs: Fernando P\'erez (UC Berkeley), Laurel Larsen (UC Berkeley), Joe Hamman (NCAR) \\
+\end{entryright}
+
+\begin{entryright}
+2019 & \textbf{Senior Personnel}: NSF - INFEWS/T3 RCN to Facilitate collaboration through the sharing of FEW data and methods \\
+& PI: Rosemary Knight (Stanford), Co-PIs: Fernando P\'erez (UC Berkeley), Isha Ray (UC Berkeley), Mark Lubell (UC Davis), Kate Maher (Stanford) \\
+\end{entryright}
+
+\subheading{Awarded}
+\begin{entryright}
+2019 & \textbf{Senior Personnel}: Geoscientists Without Borders ($\$50,000$) \\
+& Improving Water Security in Mon State, Myanmar via Geophysical Capacity Building \\
+& PI: Douglas Oldenburg (UBC) \\
+\end{entryright}
+
+
+\subheading{Completed}
+\begin{entryright}
+2014 & \textbf{Co-PI}: Science Center for Learning and Teaching - Development Grant ($\$2,500$) \\
+& For development of online interactive resources for undergraduate geophysics at the University of British Columbia \\
+& PI: Douglas Oldenburg (UBC) \\
+\end{entryright}
+
+% =========================== CONTRIBUTIONS ================================ %
+
+\heading{Software and Open Science}
+
+I contribute to a number of open-source software projects, all of which are accessible through my GitHub profile (\href{https://github.com/lheagy}{https://github.com/lheagy}). Some of larger projects include:
+\\
+
+\begin{entryright}
+\tworow{2014 -- present} & \textbf{GeoSci.xyz} \\
+& Core maintainer and contributor to online interactive textbooks for geophysics. Resources include: \\
+& \begin{myitemize}
+    \item \textbf{Geophysics for Practicing Geoscientists:} an introductory resource on applied geophysics (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
+    \item \textbf{Electromagnetic Geophysics:} a graduate level resource on the theory and application of electromagnetic geophysical methods (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
+    \item \textbf{GeoSci Labs:} a collection of Jupyter notebooks for exploring concepts in geophysics (\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs})
+    % \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
+\end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+\tworow{2014 -- present} & \textbf{SimPEG} \\
+& Core maintainer and community developer. Software repositories include: \\
+& \begin{myitemize}
+    \item \textbf{SimPEG:} software for numerical simulations and inversions in geophysics (\href{https://github.com/simpeg/simpeg}{https://github.com/simpeg/simpeg})
+    \item \textbf{discretize:} meshing and discretization tools for finite volume and inverse problems (\href{https://github.com/simpeg/discretize}{https://github.com/simpeg/discretize})
+    \item \textbf{geoana: } analytic solutions for common physics problems relevant to geophysics (\href{https://github.com/simpeg/geoana}{https://github.com/simpeg/geoana})
+\end{myitemize}
+\end{entryright}
+
+% =========================== TEACHING ================================ %
+
+\heading{Teaching}
+
+\subheading{Undergraduate}
+
+\begin{entryright}
+2013 -- 2016 & \textbf{Teaching Assistant:} EOSC 350:  Environmental, Geotechnical, and Exploration Geophysics \\
+& \emph{University of British Columbia} \\
+& Instructor: Douglas Oldenburg\\
+\end{entryright}
+
+\begin{entryright}
+2015 & \textbf{Teaching Assistant:} Directed Studies: Inversion in Applied Geophysics \\
+& \emph{University of British Columbia} \\
+& Instructor: Douglas Oldenburg\\
+\end{entryright}
+
+
+\begin{entryright}
+2012 & \textbf{Teaching Assistant:} EOSC 354: Analysis of Time Series and Inverse Theory for Earth Scientists \\
+& \emph{University of British Columbia} \\
+& Instructor: Michael Bostock\\
+\end{entryright}
+
+\subheading{Workshops \& Short Courses}
+
+\begin{entryright}
+    2019 & \textbf{Co-Instructor:} Deterministic inversion \\% (April 8, 2019)\\
+    & \emph{LAPIS 2019: La Plata International School on Astronomy and Geophysics} \\
+    & Lead Instructor: Douglas Oldenburg, Co-Instructor: Seogi Kang \\
+    & (\href{https://courses.geosci.xyz/lapis2019}{https://courses.geosci.xyz/lapis2019})\\
+\end{entryright}
+
+\begin{entryright}
+    2018 & \textbf{Co-Instructor:} Best Practices for Modern Open-Source Research Codes \\ %(December 12, 2018)\\
+    & AGU Fall Meeting 2018 in Washington, DC \\
+    & Co-Instructors: Leonardo Uieda,  Lion Krischer and Florian Wagner \\
+    & (\href{https://github.com/agu-ossi/2018-agu-oss}{https://github.com/agu-ossi/2018-agu-oss}) \\
+\end{entryright}
+
+\begin{entryright}
+    2018 & \textbf{Co-Instructor:} 3D EM Modelling and Inversion with Open Source Resources \\ % (June 17, 2018)\\
+    & \emph{AEM 2018: 7th International Workshop on Airborne Electromagnetics in Kolding, Denmark} \\
+    & (\href{https://courses.geosci.xyz/aem2018}{https://courses.geosci.xyz/aem2018})
+\end{entryright}
+
+\begin{entryright}
+    2017 & \textbf{Co-Instructor:} Geophysical Electromagnetics: Fundamentals and Applications \\ % (January 30, 2017 - December 13, 2017)\\
+    & \emph{Society of Exploration Geophysics Distinguished Instructor Short Course} \\
+    & Lead instructor: Douglas Oldenburg, Co-Instructor: Seogi Kang  \\
+    & (\href{http://disc2017.geosci.xyz}{http://disc2017.geosci.xyz}) \\
+    & \begin{myitemize}\vspace{-0.2cm}
+        \item{Locations:
+            \begin{myitemize}
+                \vspace{0.05cm}
+                \item Denver, USA (January 30-31, 2017)
+                \item Perth, Australia (July 27-28, 2017)
+                \item Adelaide, Australia (August 2-3, 2017)
+                \item Brisbane, Austraila (August 7-8, 2017)
+                \item Delft, Netherlands (September 11-12, 2017)
+                \item Bonn, Germany (September 18-19, 2017)
+                \item Vienna, Austria (September 21-22, 2017)
+                \item Zurich, Switzerland (September 26-27, 2017)
+                \item Aarhus, Denmark (October 2-3, 2017)
+                \item Toronto, Canada (October 27, 2017)
+                \item Mexico City, Mexico (November 6-7, 2017)
+                \item Buenos Aires, Argentina (November 13-14, 2017)
+                \item Santiago, Chile (November 16-17, 2017)
+                \item Santa Cruz de la Sierra, Bolivia (November 22-23, 2017) - Cancelled
+                \item Rio de Janeiro, Brazil (November 28-29, 2017)
+                \item Calgary, Canada (December 5-6, 2017)
+                \item Vancouver, Canada (December 12-13, 2017)
+            \end{myitemize}\vspace{-0.5cm}
+        }
+    \end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+    2016 & \textbf{Organizer:} Geophysical Simulation and Inversion (August 19-21, 2016) \\
+    & \emph{Banff International Research Station}, \\
+    & Organized with Douglas Oldenburg, Adam Pidlisecky and Rowan Cockett \\
+    & (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695})  \\
+\end{entryright}
+
+% =========================== Service ================================ %
+\heading{Service}
+
+\subheading{Editorial}
+
+\begin{entryright}
+\tworow{2017 -- \\ present} & \textbf{Editor: } Journal of Open Source Software \\
+& Topics: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
+\end{entryright}
+
+\subheading{Conferences}
+
+\begin{entryright}
+2019 & \textbf{Chair}: SciPy Birds of a Feather (BoF) Sessions \\
+& SciPy Conference (\href{https://www.scipy2019.scipy.org/bof-sessions}{https://www.scipy2019.scipy.org/bof-sessions})
+\end{entryright}
+
+\begin{entryright}
+2018 & \textbf{Town Hall Organizer}: Community Forum: The role of an open-source software initiative within the AGU \\
+& \emph{American Geophysical Union (AGU) Annual Meeting} \\
+& Co-organized with: Lion Krischer, Leonardo Uieda
+\end{entryright}
+
+\begin{entryright}
+ & \textbf{Session Convener:} Short Talks: A tour of open-source software packages for the geosciences \\
+& \emph{American Geophysical Union (AGU) Annual Meeting} \\
+& Co-organized with Florian Wagner, Jens Klump and Lion Krischer
+\end{entryright}
+
+\begin{entryright}
+2017 & \textbf{Panel Discussion Organizer:} Open Source Software in the Geosciences \\
+& \emph{American Geophysical Union (AGU) Annual Meeting} \\
+& Co-organized with Anna Kelbert, Luz Andelica Caudillo Mata, Jared Peacock, Suzan van der Lee, Juan Lorenzo \\
+& (\href{https://youtu.be/0GO4ZZ5Ry6M}{https://youtu.be/0GO4ZZ5Ry6M}))\\
+\end{entryright}
+
+
+\begin{entryright}
+& \textbf{Program Committee Member: } JupyterCon, August 22-25, New York, NY \\
+& (\href{https://conferences.oreilly.com/jupyter/jup-ny}{https://conferences.oreilly.com/jupyter/jup-ny}) \\
+\end{entryright}
+
+\subheading{Mentoring}
+
+\begin{entryright}
+2014 -- 2015 & \textbf{Undergraduate Research Mentor} Research Experience Program at the University of British Columbia\\
+& Student: Mohamed Rassas \\
+& Project: A comparison of conventional and open channel hydraulic fracturing and the importance of imaging to optimize the fracturing process, presented at \emph{the Multidisciplinary Undergraduate Research Conference at the University of British Columbia}
+\end{entryright}
+
+\subheading{Reviewing}
+\begin{entryright}
+& American Geophysical Union (AGU) book proposal \\
+& Computers \& Geosciences \\
+& Exploration Geophysics \\
+& Geophysical Journal International (GJI) \\
+& The Leading Edge \\
+& Society of Exploration Geophysics Abstracts \\
+\end{entryright}
+
+% \begin{entryright}
+% 2005 -- 2009 & \textbf{Volunteer Instructor: Alberta Diploma Exam Reviews} \\
+% & Developed and delivered review courses for Physics 30, Chemistry 30, Pure Math 30 in the Alberta high school curriculum\\
+% & Supervised by Mr. David Westra
+% \end{entryright}
 
 % =========================== AWARDS ================================ %
 
@@ -442,39 +705,8 @@
 & Awarded for academic achievement ($\times 4$)
 \end{entryright}
 
-
-% =========================== Grants ================================ %
-
-\heading{Grants}
-\subheading{Pending}
-
-\begin{entryright}
-2019 & \textbf{Senior Personnel}: NSF - EarthCube Data Capabilities: Collaborative Proposal: Jupyter meets the Earth: Enabling discovery in geoscience through interactive computing at scale \\
-& PIs: Fernando P\'erez (UC Berkeley), Laurel Larsen (UC Berkeley), Joe Hamman (NCAR) \\
-\end{entryright}
-
-\begin{entryright}
-2019 & \textbf{Senior Personnel}: NSF - INFEWS/T3 RCN to Facilitate collaboration through the sharing of FEW data and methods \\
-& PI: Rosemary Knight (Stanford), co-PIs: Fernando P\'erez (UC Berkeley), Isha Ray (UC Berkeley), Mark Lubell (UC Davis), Kate Maher (Stanford) \\
-\end{entryright}
-
-\subheading{Awarded}
-\begin{entryright}
-2019 & \textbf{Senior Personnel}: Geoscientists Without Borders ($\$50,000$) \\
-& Improving Water Security in Mon State, Myanmar via Geophysical Capacity Building \\
-& PI: Douglas Oldenburg (UBC) \\
-\end{entryright}
-
-
-\subheading{Completed}
-\begin{entryright}
-2014 & \textbf{co-PI}: Science Center for Learning and Teaching - Development Grant ($\$2,500$) \\
-& For development of online interactive resources for undergraduate geophysics at the University of British Columbia \\
-& PI: Douglas Oldenburg (UBC) \\
-\end{entryright}
-
 % =========================== Publications ================================ %
-
+\clearpage
 \heading{Publications}
 
 % \bibliography{./refs/lindseyrefs}
@@ -666,177 +898,10 @@
 
 \begin{entryright}
 2013 & $\dagger$ \textbf{Heagy L. J.} \& Oldenburg, D. W., 2013. Investigating the potential of using conductive or permeable proppant particles for hydraulic fracture characterization. \emph{SEG Annual Meeting}. \doi{10.1190/segam2013-1372.1} \\
-& $\quad\dagger$ Award of Merit (Best Student Paper, Annual Meeting
+& $\quad\dagger$ Award of Merit (Best Student Paper, Annual Meeting)
 \end{entryright}
 
 
-
-% =========================== CONTRIBUTIONS ================================ %
-
-\heading{Software and Open Science}
-
-I contribute to a number of open-source software projects, all of which are accessible through my GitHub profile \href{https://github.com/lheagy}{https://github.com/lheagy}. Some of larger projects include:
-\\
-
-\begin{entryright}
-\tworow{2014 -- present} & \textbf{GeoSci.xyz} \\
-& Core maintainer and contributor to online interactive textbooks for geophysics (\href{http://geosci.xyz}{http://geosci.xyz}). Resources include: \\
-& \begin{myitemize}
-    \item \textbf{Geophysics for Practicing Geoscientists:} an introductory resource on applied geophysics (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
-    \item \textbf{Electromagnetic Geophysics:} a graduate level resource on the theory and application of electromagnetic geophysical methods (\href{http://gpg.geosci.xyz}{http://gpg.geosci.xyz})
-    \item \textbf{GeoSci Labs:} a collection of Jupyter notebooks for exploring concepts in geophysics (\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs})
-    % \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
-\end{myitemize}
-\end{entryright}
-
-\begin{entryright}
-\tworow{2014 -- present} & \textbf{SimPEG} \\
-& Core maintainer and community developer (\href{https://simpeg.xyz}{https://simpeg.xyz}). Software repositories include: \\
-& \begin{myitemize}
-    \item \textbf{SimPEG:} software for numerical simulations and inversions in geophysics (\href{https://github.com/simpeg/simpeg}{https://github.com/simpeg/simpeg})
-    \item \textbf{discretize:} meshing and discretization tools for finite volume and inverse problems (\href{https://github.com/simpeg/discretize}{https://github.com/simpeg/discretize})
-    \item \textbf{geoana: } analytic solutions for common physics problems relevant to geophysics (\href{https://github.com/simpeg/geoana}{https://github.com/simpeg/geoana})
-\end{myitemize}
-\end{entryright}
-
-% =========================== TEACHING ================================ %
-
-\heading{Teaching}
-
-\subheading{Undergraduate}
-
-\begin{entryright}
-2013 -- 2016 & \textbf{Teaching Assistant:} EOSC 350:  Environmental, Geotechnical, and Exploration Geophysics \\
-& \emph{University of British Columbia} \\
-& Instructor: Douglas Oldenburg\\
-\end{entryright}
-
-\begin{entryright}
-2015 & \textbf{Teaching Assistant:} Directed Studies: Inversion in Applied Geophysics \\
-& \emph{University of British Columbia} \\
-& Instructor: Douglas Oldenburg\\
-\end{entryright}
-
-
-\begin{entryright}
-2012 & \textbf{Teaching Assistant:} EOSC 354: Analysis of Time Series and Inverse Theory for Earth Scientists \\
-& \emph{University of British Columbia} \\
-& Instructor: Michael Bostock\\
-\end{entryright}
-
-\subheading{Workshops \& Short Courses}
-
-\begin{entryright}
-    2019 & \textbf{Co-Instructor:} Deterministic inversion (April 8, 2019)\\
-    & \emph{LAPIS 2019: La Plata International School on Astronomy and Geophysics} (\href{https://courses.geosci.xyz/lapis2019}{https://courses.geosci.xyz/lapis2019})\\
-    & Lead Instructor: Douglas Oldenburg, Co-Instructor: Seogi Kang
-\end{entryright}
-
-\begin{entryright}
-    2018 & \textbf{Co-Instructor:} Best Practices for Modern Open-Source Research Codes (December 12, 2018)\\
-    & AGU Fall Meeting 2018 in Washington, DC (\href{https://github.com/agu-ossi/2018-agu-oss}{https://github.com/agu-ossi/2018-agu-oss}) \\
-    & Co-Instructors: Leonardo Uieda,  Lion Krischer and Florian Wagner
-\end{entryright}
-
-\begin{entryright}
-    2018 & \textbf{Co-Instructor:} 3D EM Modelling and Inversion with Open Source Resources (June 17, 2017)\\
-    & \emph{AEM 2018: 7th International Workshop on Airborne Electromagnetics in Kolding, Denmark}, (\href{https://courses.geosci.xyz/aem2018}{https://courses.geosci.xyz/aem2018})
-\end{entryright}
-
-\begin{entryright}
-    2017 & \textbf{Co-Instructor:} Geophysical Electromagnetics: Fundamentals and Applications (January 30, 2017 - December 13, 2017)\\
-    & \emph{Society of Exploration Geophysics Distinguished Instructor Short Course} (\href{http://disc2017.geosci.xyz}{http://disc2017.geosci.xyz}) \\
-    & Lead instructor: Douglas Oldenburg, Co-Instructor: Seogi Kang  \\
-    & \begin{myitemize}\vspace{-0.2cm}
-        \item{Locations:
-            \begin{myitemize}
-                \vspace{0.05cm}
-                \item Denver, USA (January 30-31, 2017)
-                \item Perth, Australia (July 27-28, 2017)
-                \item Adelaide, Australia (August 2-3, 2017)
-                \item Brisbane, Austraila (August 7-8, 2017)
-                \item Delft, Netherlands (September 11-12, 2017)
-                \item Bonn, Germany (September 18-19, 2017)
-                \item Vienna, Austria (September 21-22, 2017)
-                \item Zurich, Switzerland (September 26-27, 2017)
-                \item Aarhus, Denmark (October 2-3, 2017)
-                \item Toronto, Canada (October 27, 2017)
-                \item Mexico City, Mexico (November 6-7, 2017)
-                \item Buenos Aires, Argentina (November 13-14, 2017)
-                \item Santiago, Chile (November 16-17, 2017)
-                \item Santa Cruz de la Sierra, Bolivia (November 22-23, 2017) - Cancelled
-                \item Rio de Janeiro, Brazil (November 28-29, 2017)
-                \item Calgary, Canada (December 5-6, 2017)
-                \item Vancouver, Canada (December 12-13, 2017)
-            \end{myitemize}\vspace{-0.5cm}
-        }
-    \end{myitemize}
-\end{entryright}
-
-\begin{entryright}
-    2016 & \textbf{Organizer:} Geophysical Simulation and Inversion (August 19-21, 2016) \\
-    & \emph{Banff International Research Station}, \\ & (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695})  \\
-    & Organized with Douglas Oldenburg, Adam Pidlisecky and Rowan Cockett \\
-\end{entryright}
-
-% =========================== Service ================================ %
-\heading{Service}
-
-\subheading{Editorial}
-
-\begin{entryright}
-\tworow{2017 -- \\ present} & \textbf{Editor: } Journal of Open Source Software \\
-& Topics: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
-\end{entryright}
-
-\subheading{Conferences}
-
-\begin{entryright}
-2019 & \textbf{Chair}: SciPy Birds of a Feather (BoF) Sessions \\
-& SciPy Conference (\href{https://www.scipy2019.scipy.org/bof-sessions}{https://www.scipy2019.scipy.org/bof-sessions})
-\end{entryright}
-
-\begin{entryright}
-2018 & \textbf{Town Hall Organizer}: Community Forum: The role of an open-source software initiative within the AGU \\
-& \emph{American Geophysical Union (AGU) Annual Meeting} \\
-& Co-organized with: Lion Krischer, Leonardo Uieda
-\end{entryright}
-
-\begin{entryright}
- & \textbf{Session Convener:} Short Talks: A tour of open-source software packages for the geosciences \\
-& \emph{American Geophysical Union (AGU) Annual Meeting} \\
-& Co-organized with Florian Wagner, Jens Klump and Lion Krischer
-\end{entryright}
-
-\begin{entryright}
-2017 & \textbf{Panel Discussion Organizer:} Open Source Software in the Geosciences \\
-& \emph{American Geophysical Union (AGU) Annual Meeting} (\href{https://youtu.be/0GO4ZZ5Ry6M}{https://youtu.be/0GO4ZZ5Ry6M}))\\
-& Co-organized with Anna Kelbert, Luz Andelica Caudillo Mata, Jared Peacock, Suzan van der Lee, Juan Lorenzo
-\end{entryright}
-
-
-\begin{entryright}
-& \textbf{Program Comittee Member: } JupyterCon, August 22-25, New York, NY \\
-& (\href{https://conferences.oreilly.com/jupyter/jup-ny}{https://conferences.oreilly.com/jupyter/jup-ny}) \\
-    % & \begin{myitemize}
-    %     \item{This was the inaugural year for JupyterCon}
-    %     \item{Committee responsibilities included: reviewing abstracts, outreach to potential speakers, event promotion}
-    % \end{myitemize}
-\end{entryright}
-
-\subheading{Mentoring}
-
-\begin{entryright}
-2014 -- 2015 & \textbf{Undergraduate Research Mentor} Research Experience Program at the University of British Columbia\\
-& Student: Mohamed Rassas \\
-& Project: A comparison of conventional and open channel hydraulic fracturing and the importance of imaging to optimize the fracturing process, presented at \emph{the Multidisciplinary Undergraduate Research Conference at the University of British Columbia}
-\end{entryright}
-
-% \begin{entryright}
-% 2005 -- 2009 & \textbf{Volunteer Instructor: Alberta Diploma Exam Reviews} \\
-% & Developed and delivered review courses for Physics 30, Chemistry 30, Pure Math 30 in the Alberta high school curriculum\\
-% & Supervised by Mr. David Westra
-% \end{entryright}
 
 % =========================== Media ================================ %
 
