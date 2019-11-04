@@ -1,0 +1,926 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Academic CV
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[a4paper, 11pt]{article}
+
+% \usepackage[a4paper, margin=0.5cm]{geometry}
+
+% \usepackage{biblatex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package imports
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% standard packages
+\setlength\parindent{0in}
+\usepackage{mathpazo}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{bibentry}
+\usepackage{natbib}
+
+\usepackage{float}
+\usepackage{mdwlist}
+\usepackage{fullpage}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+
+% Define command to insert month name and year as date
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Set fonts. Requires compilation with xelatex
+% \usepackage{fontspec}
+% \setmainfont{Helvetica Neue}[
+%   ItalicFont=Helvetica Neue Italic,
+% ]
+
+
+% \newfontfamily\HelveticaNeueUltraLight{Helvetica Neue Light}
+% \newfontfamily\HelveticaNeueUltraLightItalic{Helvetica Neue Light Italic}
+
+
+% Colors
+\usepackage{color}
+\definecolor{Myblue}{rgb}{0,0,0.6}
+\definecolor{Mygreen}{rgb}{0,0.3,0}
+\usepackage[colorlinks=true,linkcolor=Myblue,citecolor=Mygreen,urlcolor=Myblue,bookmarks=true]{hyperref}
+
+% \pagenumbering{arabic}
+
+\setlength{\headheight}{10pt}
+\setlength{\headsep}{10pt}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage[margin=2cm,top=2cm,bottom=2cm]{geometry}
+% \newif\ifdescriptions
+% \descriptionsfalse
+% \descriptionstrue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aliases
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% shortcuts
+\newcommand{\cv}{curriculum vitae}
+\newcommand{\CV}{Curriculum Vitae}
+
+% Personal Info
+\newcommand{\firstname}{Lindsey}
+\newcommand{\middleinitial}{J.}
+\newcommand{\lastname}{Heagy}
+\newcommand{\initials}{L. J.}
+
+\newcommand{\emailaddress}{lindseyheagy@gmail.com}
+\newcommand{\email}{\href{mailto:\emailaddress}{\emailaddress}}
+
+\newcommand{\phone}{604-836-2715}
+\newcommand{\websiteurl}{https://lindseyjh.ca}
+\newcommand{\website}{\href{\websiteurl}{\websiteurl}}
+\newcommand{\ORCIDNumber}{0000-0002-1551-5926}
+\newcommand{\ORCID}{\href{https://orcid.org/\ORCIDNumber}{\ORCIDNumber}}
+
+\newcommand{\position}{Postdoctoral Researcher}
+\newcommand{\affiliation}{
+    Department of Statistics \\
+    University of California, Berkeley
+}
+
+\newcommand{\fullname}{\firstname\ \middleinitial\  \lastname}
+\newcommand{\shortname}{\initials\ \lastname}
+
+\newcommand{\arxiv}[1]{arXiv: \href{https://arxiv.org/abs/#1}{#1}}
+\newcommand{\doi}[1]{doi: \href{https://doi.org/#1}{#1}}
+\newcommand{\youtube}[1]{youtube: \href{https://youtu.be/XY3Tq9Wd1\_A}{#1}}
+
+\newcommand{\geosci}{\href{https://geosci.xyz}{https://geosci.xyz}}
+\newcommand{\gpg}{\href{https://gpg.geosci.xyz}{https://gpg.geosci.xyz}}
+\newcommand{\emgeosci}{\href{https://em.geosci.xyz}{https://em.geosci.xyz}}
+\newcommand{\GeoSci}{\href{https://geosci.xyz}{GeoSci.xyz~}}
+
+% titles, headings, etc
+\newcommand{\mytitle}[1]{
+    {%\HelveticaNeueLight
+    % \fontsize{26pt}{0}\selectfont #1
+    \LARGE #1
+    }\\[0.1cm]
+}
+
+\newcommand{\mysubtitle}{
+    {
+    % \fontsize{12pt}{0}\selectfont
+    \CV\ $~\cdot~$ \monthyear\today
+    } \\[0.1cm]
+}
+
+\newcommand{\heading}[1]{
+    \begin{minipage}[t]{\textwidth}
+    \vspace{0.05cm}
+    {\Large #1}\\
+    \vspace{-0.35cm}
+    \hrule
+    \end{minipage}
+    \vspace{0.1cm}
+}
+
+\newcommand{\subheading}[1]{
+    \vspace{-0.1cm}
+    {\large #1}\\
+    \vspace{-0.3cm}
+}
+
+\newcommand{\tworow}[1]{\multirow{2}{2.2cm}{#1}}
+
+\usepackage{environ}
+\NewEnviron{entryleft}{
+    \vspace{-0.3cm}
+    \begin{tabularx}{\textwidth}{@{}p{0.86\textwidth} p{0.14\textwidth}}
+        \BODY
+    \end{tabularx}
+    \vspace{-0.3cm}
+
+}
+
+\usepackage{environ}
+\NewEnviron{entryright}{
+    \vspace{-0.3cm}
+    \begin{tabularx}{\textwidth}{@{}p{0.13\textwidth} @{}p{0.87\textwidth}}
+        \BODY
+    \end{tabularx}
+    \vspace{-0.3cm}
+}
+
+\usepackage{environ}
+\NewEnviron{entryrightwide}{
+    \vspace{-0.3cm}
+    \begin{tabularx}{\textwidth}{@{}p{0.23\textwidth} @{}p{0.77\textwidth}}
+        \BODY
+    \end{tabularx}
+    \vspace{-0.3cm}
+}
+
+\usepackage{environ}
+\NewEnviron{entryrighttight}{
+    \vspace{-0.3cm}
+    \begin{tabularx}{\textwidth}{@{}p{0.06\textwidth} @{}p{0.94\textwidth}}
+        \BODY
+    \end{tabularx}
+    \vspace{-0.3cm}
+}
+
+\newenvironment{myquote}%
+  {\list{}{\leftmargin=0.5cm\rightmargin=0cm}\item[]}%
+  {\endlist}
+
+\NewEnviron{myitemize}{
+    \vspace{-0.2cm}
+    \begin{itemize}[topsep=0pt,itemsep=0.5pt]
+        \BODY
+    \end{itemize}
+    % \vspace{-0.1cm}
+}
+
+\NewEnviron{myenumerate}{
+    \vspace{-0.2cm}
+    \begin{enumerate}[topsep=0pt, itemsep=0.5pt]
+        \BODY
+    \end{enumerate}
+    % \vspace{-0.3cm}
+}
+
+% set header
+\chead{
+    \footnotesize
+    \emph{
+        \shortname $~\cdot~$
+        \cv $~\cdot~$
+        \monthyear\today
+    }
+}
+
+% \pagenumbering{arabic}
+% \cfoot{ %\HelveticaNeueUltraLight
+% \thepage \hspace{1pt} of \pageref*{LastPage}
+% }
+
+\begin{document}
+\thispagestyle{empty}
+% \hyphenpenalty=100000
+% \exhyphenpenalty=1000000
+
+% =========================== PERSONAL INFO ================================ %
+
+\mytitle{\fullname}
+% \vspace{-0.2cm}
+% \hrule
+% \vspace{0.3cm}
+\begin{minipage}[t]{0.595\textwidth}
+    \position \\
+    \affiliation
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+    \begin{flushright}
+        Last updated: \monthyear\today
+        \\
+        ORCID: \ORCID
+        \\
+        email: \email
+        \\
+        website: \website
+    \end{flushright}
+\end{minipage}
+
+% =========================== EDUCATION ================================ %
+
+% \heading{Research Interests}
+
+% I am interested in the intersection of geoscientific questions, data science techniques and interactive computing. Questions that cross disciplinary lines and include multiple data-types (e.g. geophysical, geologic, hydrologic and petrophysical) are of particular interest to me. As a mechanism to facilitate collaboration between researchers in different disciplines, I contribute to open-source scientific software and open educational resources. My background is in geophysical simulations and inversions.
+
+% % \subheading{Themes}
+% % \begin{myitemize}
+% %     \item{Computational and data-science techniques for geoscience problems relevant to society}
+% %     \item{Combining geophysical inversion strategies and statistical techniques to integrate heterogeneous data types (e.g. geophysical, geologic, hydrologic, and rock-physics data).}
+% %     \item{Interactive computing for interpretation of geophysical and geoscientific data}
+% % \end{myitemize}
+% \subheading{Current Projects}
+% \begin{myitemize}
+%     \item{Interactive, high-performance computing for geophysical simulations and inversions using Jupyter on the National Energy Research Scientific Computing Center (NERSC)}
+%     \item{Electromagnetic geophysical methods in settings with large contrasts in electrical and magnetic physical properties}
+%     \item{Exploring the principled application of machine learning tools to problems constrained by physical models}
+%     \item{Open source software for simulations and parameter estimation in geophysics}
+% \end{myitemize}
+% =========================== EDUCATION ================================ %
+
+\heading{Education}
+
+% \begin{tabularx}{\textwidth}{@{}p{0.9\textwidth} XX@{}R{0.1\textwidth}}
+% \textbf{PhD} in Geophysics, University of British Columbia & \multirow{2}{2cm}{2012 -- \\ present}\\
+% % $\quad$ University of British Columbia & \\
+% $\quad$ Supervisor: Dr. Douglas Oldenburg & \\
+% $\quad$ Thesis: \emph{Monitoring Hydraulic Fracturing with Electromagnetic Geophysics} & \\
+% \end{tabularx}
+
+\begin{entryright}
+2012 -- 2018 & \textbf{PhD} in Geophysics, University of British Columbia\\
+& Thesis: Electromagnetic imaging for subsurface injections \\
+& Advisor: Douglas Oldenburg\\
+& Select Awards: NSERC Vanier Scholarship, Alexander Graham Bell Canada Graduate Scholarship
+% & Themes: inverse problems, numerical simulations, electromagnetics \\
+\end{entryright}
+
+\begin{entryright}
+2008 -- 2012 & \textbf{BSc} with First Class Honors in Geophysics, University of Alberta \\
+% & First Class Honors \\
+& Select Awards: Governor General's Silver Medal, Lieutenant-Governor's Gold Medal, APEGGA Past Presidents' Medal in Geophysics\\
+% & \myindent{GPA: 4.0 / 4.0}
+\end{entryright}
+
+% =========================== Appointments ================================ %
+
+\heading{Appointments}
+\begin{entryright}
+\tworow{Nov. 2018 -- present} & \textbf{Postdoctoral Researcher}, Department of Statistics, University of California, Berkeley\\
+& Advisor: Fernando P\'erez \\
+% & Themes: Machine learning in the physical sciences, interactive computing, statistical techniques for geoscience
+\end{entryright}
+
+% =========================== EXPERIENCE ================================ %
+\heading{Professional Experience}
+
+\begin{entryrightwide}
+    Apr. 2016 -- Sep. 2017 & \textbf{Aranz Geo Canada Ltd} (Calgary, AB): Computational Geophysics Consultant (part-time)\\
+\end{entryrightwide}
+
+
+\begin{entryrightwide}
+    Nov. 2015 -- Apr. 2016 & \textbf{3point Science Inc}  (Calgary, AB): Computational Geophysicist (part-time) \\
+    % \if\descriptions
+    % & \begin{myitemize}
+    %     \item Consulting on the development and design of interactive 3D visualization software for the geosciences
+    % \end{myitemize}
+    % \fi
+\end{entryrightwide}
+
+
+\begin{entryrightwide}
+    Jun. 2014 -- Aug. 2014 & \textbf{Schlumberger Doll Research} (Boston, MA): Geophysics Intern \\
+    % \if\descriptions
+    % & \begin{myitemize}
+    %     \item Supervisor: Dr. Dzevat Omeragic
+    %     \item Examined upscaling techniques and performed numerical simulations to investigate the feasibility of electromagnetic imaging of complex hydraulic fractures
+    % \end{myitemize}
+    % \fi
+\end{entryrightwide}
+
+
+\begin{entryrightwide}
+    Jun. 2013 -- Aug. 2013 & \textbf{Schlumberger Electromagnetic Imaging} (Richmond, CA): Geophysics Intern \\
+    % \if\descriptions
+    % & \begin{myitemize}
+    %     \item Supervisor: Dr. Michael Wilt
+    %     \item Developed a workflow for mapping hydraulic fractures using cross-well electromagnetic surveys
+    %     \item Awarded the patent: ``Determining proppant and fluid distribution'' (US Patent App. 14/494,313) which was developed from this work
+    % \end{myitemize}
+    % \fi
+\end{entryrightwide}
+
+
+
+\begin{entryrightwide}
+    May 2012 -- Aug. 2012 & \textbf{ConocoPhillips Canada} (Calgary, AB): Geophysics Summer Student \\
+    % \if\descriptions
+    % & \begin{myitemize}
+    %     \item Supervisor: Richard Forest
+    %     \item Interpreted 3D seismic volumes covering 8 townships in Western Canada by tying synthetic seismograms, mapping seismic horizons, and examining seismic attributes.
+    %     \item Worked with geologists and reservoir engineers to map a potential natural gas resource and propose a drilling location
+    % \end{myitemize}
+    % \fi
+\end{entryrightwide}
+
+
+
+\begin{entryrightwide}
+    May 2011 -- Aug. 2011 & \textbf{Alfred Wegener Institute of Polar and Marine Research} (Bremerhaven, Germany): Geophysics Summer Student \\
+    % \if\descriptions
+    % & \begin{myitemize}
+    %     \item Conducted numerical simulations to generate velocity profiles and estimate transport of the Antarctic Circumpolar Current south of Africa
+    %     \item This project was funded through the Research Internships in Science and Engineering (RISE) program of the German Academic Exchange Service (DAAD)
+    %     % \item Attended a program-wide meeting of interns from Canada, the United States, and the United Kingdom, discussing research programs and collaboration opportunities in Germany
+    % \end{myitemize}
+    % \fi
+\end{entryrightwide}
+
+% % =========================== Leadership  ================================ %
+% \heading{Leadership in Open Science}
+% \subheading{Project co-creator: SimPEG}
+
+% SimPEG is an open-source software project for simulation and parameter estimation in geophysics (\href{https://simpeg.xyz}{simpeg.xyz}) that was founded by Rowan Cockett, myself, and Seogi Kang. I continue to serve in a leadership role with the development, maintenance, and community support of the project. I review suggested changes to the code, advise on new developments, respond to issues, and lead weekly team meetings that discuss research and software development. Beyond research publications that include the founding team, SimPEG has been used in at least 6 peer-reviewed publications, 8 conference proceedings, 1 thesis at the Colorado School of Mines, and 3 in-progress theses at the University of British Columbia.
+
+
+% \subheading{Project co-creator: GeoSci.xyz}
+
+% In 2013, myself, Douglas Oldenburg, and Rowan Cockett started the \GeoSci project. It is a collection of open-source web-based textbooks, including ``Geophysics for Practicing Geoscientists (GPG)'' (\gpg) and ``Electromagnetic Geophysics'' (\emgeosci), as well as a collection of interactive Jupyter notebooks for education (\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs}). I continue to serve as a content editor; I help outline content to be created and review updates and new submissions. \GeoSci resources are used as course material in at least 5 different universities and have been viewed by more than 160,000 users worldwide.
+
+
+% \subheading{Open science community development and best practices}
+
+% I am an editor with the Journal of Open Source Software (JOSS) where I facilitate peer-review of scientific software contributions and I have co-taught workshops on best practices in open source software development at the AGU annual meeting. In the broader open-source community, I participate in Project Jupyter, an open-source project for interactive computing. I have attended annual team meetings since 2017 and contribute to resources on the use of Jupyter in education\footnote{https://jupyter4edu.github.io/jupyter-edu-book}.
+
+% \clearpage
+% % =========================== Broader Impact ================================ %
+% \heading{Metrics of Broad Impact}
+
+% My scientific career, by nature of investing significant effort in the creation of open tools for geophysics which are used internationally by researchers, industry professionals, and educators, has a different impact profile that that of a researcher whose main output is purely publication-based. Here, I outline a few metrics of this broader impact. \vspace{0.3cm}
+
+% \textbf{SimPEG user base}: The SimPEG slack community has 150 members, which represents the most committed and engaged SimPEG users. The full user base is likely much larger but this is difficult to quantify because of the open-source nature of the code. \vspace{0.3cm}
+
+% %My estimate\footnote{SimPEG is open source and can be downloaded from multiple sources which cannot directly be tracked.} based on the number of community members on the SimPEG Slack group is $\sim$150. The download-count via PyPI (the Python Packaging Index) is over 800 according to \href{http://depsy.org/package/python/SimPEG}{depsy.org}. \vspace{0.3cm}
+
+% \textbf{Institutions and companies using SimPEG}: Below is a sampling of some universities, national labs, geologic surveys and companies where SimPEG is being used. Where applicable, I have also included example publications where SimPEG is used.
+% \begin{myitemize}\vspace{0.3cm}
+% \item \textbf{Colorado School of Mines}: The DC resistivity and electromagnetic simulation and inversion are used by researchers in the Center for Gravity, Electrical, and Magnetic Studies (CGEM). For example, Par\'e \& Li (2017) examine the impact of different regularization choices in a DC resistivity inversion and Maag-Capriotti \& Li (2018) use the induced polarization simulation in a methodology study (\doi{10.1190/segam2017-17739005.1}, \doi{10.1190/segam2018-2998500.1}).
+
+% \item \textbf{Dias Geophysical}: The DC resistivity and induced polarization codes are used to invert field data acquired by Dias in 3D.
+
+% \item \textbf{Geologic Survey of New Zealand}: The potential fields codes (gravity, magnetics, self-potential) have been used in volcanology studies (Miller et al., 2017; Miller et al., 2018), \\ \doi{10.1016/j.epsl.2016.11.007}, \doi{10.1029/2018GL078780}
+
+% \item \textbf{Lawrence Berkeley National Laboratory}: The electromagnetic simulations are used by researchers in the geophysics group to simulate how currents behave in settings with steel-cased wells (Wilt et al., 2018) \doi{10.1190/segam2018-2983425.1}
+
+% \item \textbf{Rural Research Institute, Korea}: The DC resistivity code has been used for Dam integrity monitoring applications (Lim, 2017) \doi{10.7582/GGE.2018.21.1.008}.
+
+% % \item \textbf{SJ Geophysics}: The DC resistivity and induced polarization codes are used to invert field data acquired by Dias in 3D.
+
+% % \item \textbf{Stanford University}: The electromagnetic simulations and inversions are used by researchers in the
+
+% \item \textbf{University of British Columbia}: Many of the researchers in Geophysical Inversion Facility contribute to the code-base and use it daily as a part of their research. For example, Abediab et al. (2018) invert magnetic data in a tectonic study; Astic \& Oldenburg (2017) develop an inversion approach which incorporates petrophysical information; and Kang et al. (2017) invert airborne electromagnetic data for electrical conductivity and chargeability. \doi{10.1016/j.tecto.2017.10.012}, \doi{10.1190/segam2018-2995155.1}, \doi{10.1190/INT-2016-0141.1}
+% \end{myitemize}\vspace{0.3cm}
+
+% \textbf{Universities using GeoSci.xyz}: Below, I provide a sampling of courses where GeoSci.xyz resources are a significant component of the course material.
+% \begin{myitemize}\vspace{0.3cm}
+% \item \textbf{Fresno State}: The GPG was used in EES 118/250T: Applied Geophysics in 2017
+% \item \textbf{Southern University of Science and Technology (China)}: The GPG is used in ESS302: Applied Geophysics II (Gravity, Magnetic, Electrical and Well Logging)
+% \item \textbf{University of Alabama}: The GPG is used in GEO 369: Introduction Geophysics,
+% \item \textbf{University of British Columbia}: The GPG is used in EOSC 350: Environmental, Geotechnical, and Exploration Geophysics I
+% \item \textbf{University of Houston}: EM GeoSci is used in GEOL 4397-03: Electromagnetic Methods for Exploration
+% \end{myitemize}\vspace{0.3cm}
+
+% \textbf{Society of Exploration Geophysics Distinguished Instructor Short Course}: EM GeoSci was the primary resource for the 2017 SEG DISC course on ``Geophysical Electromagnetics: Fundamentals and Applications,'' led by Douglas Oldenburg and co-instructed with myself and Seogi Kang. The course ran in 25 locations worldwide with $\sim$40 participants at each location.\vspace{0.3cm}
+
+% \textbf{GeoSci.xyz web-traffic}: We began tracking metrics of use in April, 2016 using Google Analytics. The values below indicate views and new users since then.
+% \begin{myitemize}\vspace{0.3cm}
+% \item \textbf{Geophysics for Practicing Geoscientists (GPG)}: over 400,000 page-views and 80,000 users
+% \item \textbf{Electromagnetic Geophysics}: over 440,000 page-views and 160,000 users
+% \end{myitemize}\vspace{0.3cm}
+
+
+% =========================== Grants ================================ %
+
+\heading{Grants}
+% \subheading{Pending}
+
+
+\subheading{Awarded}
+\begin{entryrighttight}
+2019 & \textbf{Senior Personnel}: NSF - EarthCube Data Capabilities: Jupyter meets the Earth: Enabling discovery in geoscience through interactive computing at scale ($\sim\$1,960,000$) \\
+% & PIs: Fernando P\'erez (UC Berkeley), Laurel Larsen (UC Berkeley), Joe Hamman (NCAR) \\
+\end{entryrighttight}
+
+\begin{entryrighttight}
+2019 & \textbf{Senior Personnel}: Geoscientists Without Borders ($\$50,000$) \\
+& Improving Water Security in Mon State, Myanmar via Geophysical Capacity Building \\
+% & PI: Douglas Oldenburg (UBC) \\
+\end{entryrighttight}
+
+
+\subheading{Completed}
+\begin{entryrighttight}
+2014 & \textbf{Co-PI}: Science Center for Learning and Teaching - Development Grant ($\$2,500$) \\
+% & For development of online interactive resources for undergraduate geophysics at the University of British Columbia \\
+% & PI: Douglas Oldenburg (UBC) \\
+\end{entryrighttight}
+
+% =========================== CONTRIBUTIONS ================================ %
+
+\heading{Software and Open Science}
+
+% A complete listing of open-source software contributions is available at: \href{https://github.com/lheagy}{https://github.com/lheagy}. Some of the larger projects include: \\
+
+\begin{entryright}
+\tworow{2017 -- \\ present} & \textbf{Editor: } Journal of Open Source Software \\
+& Topics: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
+\end{entryright}
+
+\begin{entryright}
+\tworow{2014 -- present} & \textbf{Project-lead: GeoSci.xyz} \\
+& Collaboratively developed online interactive textbooks for geophysics education, including:
+    \href{http://gpg.geosci.xyz}{\emph{Geophysics for Practicing Geoscientists}},
+    \href{http://em.geosci.xyz}{\emph{Electromagnetic Geophysics}},
+    \href{https://github.com/geoscixyz/geosci-labs}{\emph{GeoSci Labs}}
+%     % \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
+% \end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+\tworow{2014 -- present} & \textbf{Project-lead: SimPEG} \\
+& Open-source software project for geophysical simulations and inversions. Software repositories include:
+    \href{https://github.com/simpeg/simpeg}{SimPEG},
+    \href{https://github.com/simpeg/discretize}{discretize},
+    \href{https://github.com/simpeg/geoana}{geoana}
+\end{entryright}
+
+% =========================== TEACHING ================================ %
+
+\heading{Teaching}
+
+\subheading{Undergraduate}
+
+\begin{entryright}
+2013 -- 2016 & \textbf{Teaching Assistant:} EOSC 350:  Environmental, Geotechnical, and Exploration Geophysics
+(University of British Columbia) \\
+% & Instructor: Douglas Oldenburg\\
+\end{entryright}
+
+\begin{entryright}
+2015 & \textbf{Teaching Assistant:} Directed Studies: Inversion in Applied Geophysics
+(University of British Columbia) \\
+% & Instructor: Douglas Oldenburg\\
+\end{entryright}
+
+
+\begin{entryright}
+2012 & \textbf{Teaching Assistant:} EOSC 354: Analysis of Time Series and Inverse Theory for Earth Scientists
+(University of British Columbia) \\
+% & Instructor: Michael Bostock\\
+\end{entryright}
+
+\subheading{Workshops \& Short Courses}
+
+% \begin{entryright}
+%     2019 & \textbf{Co-Instructor:} Deterministic inversion \\% (April 8, 2019)\\
+%     & \emph{LAPIS 2019: La Plata International School on Astronomy and Geophysics} \\
+%     & Lead Instructor: Douglas Oldenburg, Co-Instructor: Seogi Kang \\
+%     % & (\href{https://courses.geosci.xyz/lapis2019}{https://courses.geosci.xyz/lapis2019})\\
+% \end{entryright}
+
+\begin{entryright}
+    2018 & \textbf{Co-Instructor:} Best Practices for Modern Open-Source Research Codes (AGU) \\
+    % & Co-Instructors: Leonardo Uieda,  Lion Krischer and Florian Wagner \\
+    % & (\href{https://github.com/agu-ossi/2018-agu-oss}{https://github.com/agu-ossi/2018-agu-oss}) \\
+\end{entryright}
+
+\begin{entryright}
+    2018 & \textbf{Co-Instructor:} 3D EM Modelling and Inversion with Open Source Resources (AEM 2018: 7th International Workshop on Airborne Electromagnetics)\\
+    % & (\href{https://courses.geosci.xyz/aem2018}{https://courses.geosci.xyz/aem2018})
+\end{entryright}
+
+\begin{entryright}
+    2017 & \textbf{Co-Instructor:} Geophysical Electromagnetics: Fundamentals and Applications (Society of Exploration Geophysics Distinguished Instructor Short Course)\\
+    % & Lead instructor: Douglas Oldenburg, Co-Instructor: Seogi Kang  \\
+    % & (\href{http://disc2017.geosci.xyz}{http://disc2017.geosci.xyz}) \\
+    % & \begin{myitemize}\vspace{-0.2cm}
+    %     \item{Locations:
+    %         \begin{myitemize}
+    %             \vspace{0.05cm}
+    %             \item Denver, USA (January 30-31, 2017)
+    %             \item Perth, Australia (July 27-28, 2017)
+    %             \item Adelaide, Australia (August 2-3, 2017)
+    %             \item Brisbane, Austraila (August 7-8, 2017)
+    %             \item Delft, Netherlands (September 11-12, 2017)
+    %             \item Bonn, Germany (September 18-19, 2017)
+    %             \item Vienna, Austria (September 21-22, 2017)
+    %             \item Zurich, Switzerland (September 26-27, 2017)
+    %             \item Aarhus, Denmark (October 2-3, 2017)
+    %             \item Toronto, Canada (October 27, 2017)
+    %             \item Mexico City, Mexico (November 6-7, 2017)
+    %             \item Buenos Aires, Argentina (November 13-14, 2017)
+    %             \item Santiago, Chile (November 16-17, 2017)
+    %             \item Santa Cruz de la Sierra, Bolivia (November 22-23, 2017) - Cancelled
+    %             \item Rio de Janeiro, Brazil (November 28-29, 2017)
+    %             \item Calgary, Canada (December 5-6, 2017)
+    %             \item Vancouver, Canada (December 12-13, 2017)
+    %         \end{myitemize}\vspace{-0.5cm}
+    %     }
+    % \end{myitemize}
+\end{entryright}
+
+\begin{entryright}
+    2016 & \textbf{Organizer:} Geophysical Simulation and Inversion (Banff International Research Station) \\
+    % & Organized with Douglas Oldenburg, Adam Pidlisecky and Rowan Cockett \\
+    % & (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695})  \\
+\end{entryright}
+
+% =========================== Service ================================ %
+% \heading{Service}
+
+% \subheading{Editorial}
+
+% \begin{entryright}
+% \tworow{2017 -- \\ present} & \textbf{Editor: } Journal of Open Source Software \\
+% & Topics: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
+% \end{entryright}
+
+% \subheading{Conferences}
+
+% \begin{entryright}
+% 2019 & \textbf{Chair}: SciPy Birds of a Feather (BoF) Sessions \\
+% & SciPy Conference (\href{https://www.scipy2019.scipy.org/bof-sessions}{https://www.scipy2019.scipy.org/bof-sessions})
+% \end{entryright}
+
+% \begin{entryright}
+% 2018 & \textbf{Town Hall Organizer}: Community Forum: The role of an open-source software initiative within the AGU \\
+% & \emph{American Geophysical Union (AGU) Annual Meeting} \\
+% & Co-organized with: Lion Krischer, Leonardo Uieda
+% \end{entryright}
+
+% \begin{entryright}
+%  & \textbf{Session Convener:} Short Talks: A tour of open-source software packages for the geosciences \\
+% & \emph{American Geophysical Union (AGU) Annual Meeting} \\
+% & Co-organized with Florian Wagner, Jens Klump and Lion Krischer
+% \end{entryright}
+
+% \begin{entryright}
+% 2017 & \textbf{Panel Discussion Organizer:} Open Source Software in the Geosciences \\
+% & \emph{American Geophysical Union (AGU) Annual Meeting} \\
+% & Co-organized with Anna Kelbert, Luz Andelica Caudillo Mata, Jared Peacock, Suzan van der Lee, Juan Lorenzo \\
+% & (\href{https://youtu.be/0GO4ZZ5Ry6M}{https://youtu.be/0GO4ZZ5Ry6M}))\\
+% \end{entryright}
+
+
+% \begin{entryright}
+% & \textbf{Program Committee Member: } JupyterCon, August 22-25, New York, NY \\
+% & (\href{https://conferences.oreilly.com/jupyter/jup-ny}{https://conferences.oreilly.com/jupyter/jup-ny}) \\
+% \end{entryright}
+
+% \subheading{Mentoring}
+
+% \begin{entryright}
+% 2014 -- 2015 & \textbf{Undergraduate Research Mentor} Research Experience Program at the University of British Columbia\\
+% & Student: Mohamed Rassas \\
+% & Project: A comparison of conventional and open channel hydraulic fracturing and the importance of imaging to optimize the fracturing process, presented at \emph{the Multidisciplinary Undergraduate Research Conference at the University of British Columbia}
+% \end{entryright}
+
+% \subheading{Reviewing}
+% \begin{entryright}
+% & American Geophysical Union (AGU) book proposal \\
+% & Computers \& Geosciences \\
+% & Exploration Geophysics \\
+% & Geophysical Journal International (GJI) \\
+% & The Leading Edge \\
+% & Society of Exploration Geophysics Abstracts \\
+% \end{entryright}
+
+% \begin{entryright}
+% 2005 -- 2009 & \textbf{Volunteer Instructor: Alberta Diploma Exam Reviews} \\
+% & Developed and delivered review courses for Physics 30, Chemistry 30, Pure Math 30 in the Alberta high school curriculum\\
+% & Supervised by Mr. David Westra
+% \end{entryright}
+
+% =========================== AWARDS ================================ %
+
+% \heading{Awards}
+
+% \begin{entryright}
+% 2016 & \textbf{UBC Library: Innovative Dissemination of Research Award}   \\
+% & Awarded for the SimPEG framework and community development. With Rowan Cockett and Seogi Kang. ($\$1,000$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2014 -- 2017 & \textbf{NSERC Vanier Scholarship} \\
+% & Vanier Scholars demonstrate leadership skills and a high standard of scholarly achievement in graduate studies in the social sciences and/or humanities, natural sciences and/or engineering and health. The Vanier Scholarship is the top graduate scholarship in Canada. ($ \$50,000 \times 3$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2014 -- 2017 & \textbf{Alexander Graham Bell Canada Graduate Scholarship} \\
+% & Awarded to high caliber scholars who are engaged in a doctoral program in the natural sciences or engineering ($ \$35,000 \times 3$, declined)
+% \end{entryright}
+
+% \begin{entryright}
+% 2014 -- 2018 & \textbf{Four Year Fellowship (FYF) for PhD Students} \\
+% & Selection based on academic excellence, upon the recommendation of the graduate program at UBC ($\$18,000 \times 4$, declined 3/4)
+% \end{entryright}
+
+% \begin{entryright}
+% 2013 & \textbf{Special UBC Graduate Scholarship - W.H. Mathews Scholarship} \\
+% & Awarded for academic achievement in Earth, Ocean and Atmospheric Sciences at UBC ($\$5,000$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2012 & \textbf{Governor General's Silver Medal} \\
+% & Awarded annually to the three undergraduate students (institution-wide) who achieve the highest academic standing overall upon graduation from his/her Bachelor degree program.
+% \end{entryright}
+
+% \begin{entryright}
+% 2012 & \textbf{Lieutenant-Governor's Gold Medal} \\
+% & Awarded to the convocating student from an Honours program in the Faculty of Science who has shown the highest distinction in scholarship (University of Alberta)
+% \end{entryright}
+
+% \begin{entryright}
+% 2012 & \textbf{APEGGA Past Presidents' Medal in Geophysics} \\
+% & Awarded to the convocating student who is a Canadian Citizen or Permanent Resident with the highest academic standing in a specialization or honours program in Geophysics on the basis of the final year
+% \end{entryright}
+
+% \begin{entryright}
+% 2011 & \textbf{The APEGGA Scholarship in Geophysics} \\
+% & Awarded on the basis of superior academic achievement in Honors Geophysics or Specialization in Geophysics ($\$3,000 \times 2$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2010 -- 2012 & \textbf{The David K Robertson Award in Geophysics and Geology} \\
+% & Awarded to a student entering the third year of a BSc Specializing in Geology or Geophysics on the basis of passion and talent in their field of study, demonstrated leadership, participation in extracurricular activities, and academic standing. ($\$5,000 \times 2$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2010 -- 2012 & \textbf{The Encana Geology and Geophysics Scholarship} \\
+% & Awarded to student(s) with superior academic achievement entering the third or fourth year of study for a Bachelor of Science with a major in Geology or Geophysical Sciences. ($\$3,500 \times 2$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2009 -- 2011 & \textbf{Louise McKinney Post Secondary Scholarship, Government of Alberta} \\
+% & Recognizes students for their academic achievements at a provincial level and encourages them to continue in their undergraduate program of study ($\$2,500 \times 3$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2009 & \textbf{Pearl Cuthbertson Memorial Award} \\
+% & Awarded to a student entering the second year of study for a Bachelor of Science degree who has completed Science 100. Selection based on academic standing and demonstrated determination, curiosity and enthusiasm for science. ($\$2,000 \times 2$)
+% \end{entryright}
+
+% \begin{entryright}
+% 2009 & \textbf{Pearson Book Prize}\\
+% & Awarded for academic achievement in Writing Studies in Science 100
+% \end{entryright}
+
+% \begin{entryright}
+% 2008 -- 2012 & \textbf{Dean's Honor Roll, University of Alberta} \\
+% & Awarded for academic achievement ($\times 4$)
+% \end{entryright}
+
+% =========================== Publications ================================ %
+% \clearpage
+\heading{Select Publications}
+
+% \bibliography{./refs/lindseyrefs}
+% \nobibliography{./refs/lindseyrefs}
+% \bibliographystyle{seg}
+
+% \subheading{Peer Reviewed Publications (submitted or in review)}
+
+\begin{entryrighttight}
+2019 &  Fournier, D., \textbf{Heagy, L. J.} \& Oldenburg, D. W., 2019. Sparse magnetic vector inversion in spherical coordinates: Application to the Kevitsa Ni-Cu-PGE magnetic anomaly, Finland. \emph{Geophysics} \textbf{(in review)}
+\end{entryrighttight}
+
+% \begin{entryrighttight}
+% & Kang, S., Oldenburg, D. W. \& \textbf{Heagy, L. J.} \& 2019. Detecting induced polarization effects in time-domain data: a modeling study using stretched exponentials. \emph{Exploration Geophysics} \textbf{(in press)}.
+% \end{entryrighttight}
+
+
+% \subheading{Peer Reviewed Publications}
+
+% 2019
+\begin{entryrighttight}
+ & \textbf{Heagy, L. J.}, Kang, S., Cockett, R. \& Oldenburg, D. W., 2019. Open source software for simulations and inversions of airborne electromagnetic data. \emph{Exploration Geophysics}. \doi{10.1080/08123985.2019.1583538}. \arxiv{1902.08238}
+\end{entryrighttight}
+
+\begin{entryrighttight}
+& \textbf{Heagy, L. J.} \& Oldenburg, D. W., 2019. Modeling electromagnetics on cylindrical meshes with applications to steel-cased wells. \emph{Computers \& Geosciences}. \doi{10.1016/j.cageo.2018.11.010}. \arxiv{1804.07991}
+\end{entryrighttight}
+
+\begin{entryrighttight}
+& \textbf{Heagy, L. J.} \& Oldenburg, D. W., 2019. Direct current resistivity with steel-cased wells. \emph{Geophysical Journal International} \doi{10.1093/gji/ggz281}. \arxiv{1810.12446}
+\end{entryrighttight}
+
+% 2018
+\begin{entryrighttight}
+2018 & Cockett, R., \textbf{Heagy, L. J.} \& Haber, E., 2018. Efficient 3D inversions using the Richards equation. \emph{Computers \& Geosciences}. \doi{10.1016/j.cageo.2018.04.006}
+\end{entryrighttight}
+
+% 2017
+\begin{entryrighttight}
+2017 & \textbf{Heagy, L. J.}, Cockett, R., Kang, S., Rosenkjaer, G. K., \& Oldenburg, D. W., 2017. A framework for simulation and inversion in electromagnetics. \emph{Computers \& Geosciences}. \doi{10.1016/j.cageo.2017.06.018}
+\end{entryrighttight}
+
+\begin{entryrighttight}
+2016 & Caudillo-Mata, L. A., Haber, E., \textbf{Heagy, L. J.} \& Schwarzbach, C., 2016. A framework for the upscaling of the electrical conductivity in the quasi-static Maxwell's equations. \emph{Journal of Computational and Applied Mathematics}. \doi{10.1016/j.cam.2016.11.051}
+\end{entryrighttight}
+
+\begin{entryrighttight}
+2015 & Cockett, R., Kang, S., \textbf{Heagy, L. J.}, Pidlisecky, A. \& Oldenburg, D. W., 2015. SimPEG: An open source framework for simulation and gradient based parameter estimation in geophysical applications. \emph{Computers \& Geosciences}. \doi{10.1016/j.cageo.2015.09.015}
+\end{entryrighttight}
+
+
+% \subheading{Non Peer Reviewed Publications}
+
+% \begin{entryrighttight}
+% 2018 & Barba, L. A., Barker, L. J., Blank, D. S., Brown, J., Downey, A. B., George, T., \textbf{Heagy, L. J.},  Mandli, K. T., Moore, J. K., Lippert, D.,  Niemeyer, K. E., Watkins, R. R., West, R. H., Wickes, E., Willing, C., \& Zingale M., 2018. Teaching and Learning with Jupyter. (\href{https://jupyter4edu.github.io/jupyter-edu-book/}{https://jupyter4edu.github.io/jupyter-edu-book/})
+% \end{entryrighttight}
+
+% \begin{entryrighttight}
+% 2017 & Kang, S., \textbf{Heagy, L. J.}, Cockett, R.,  \& Oldenburg, D. W., 2017. Exploring nonlinear inversions: A 1D magnetotelluric example. \emph{The Leading Edge}. \doi{10.1190/tle36080696.1}
+% \end{entryrighttight}
+
+% \begin{entryrighttight}
+% 2016 & Cockett, R., \textbf{Heagy, L. J.} \& Oldenburg D. W., 2016. Pixels and their neighbors: Finite volume. \emph{The Leading Edge}. \doi{10.1190/tle35080703.1}
+% \end{entryrighttight}
+
+% \subheading{Patents}
+
+% \begin{entryrighttight}
+% 2014 & Wilt, M., Cuevas, N., \& \textbf{Heagy L. J.}, 2014. Determining proppant and fluid distribution. \emph{US Patent App. 14/494,313}
+% \end{entryrighttight}
+
+
+
+% \subheading{Presentations}
+
+% \vspace{-0.3cm}
+% ~($*$ : invited,  $\dagger$ : award)
+% \vspace{0.2cm}
+
+% % 2019
+% \begin{entryright}
+% 2019 & $*$ [upcoming] \textbf{Heagy, L. J.} \& Oldenburg, D. W., 2019. Exploring the Physics of Electromagnetics with Steel-Cased Wells Using Open-Source Tools. \emph{International Union of Geodesy and Geophysics (IUGG) 2019}
+% \end{entryright}
+
+% \begin{entryright}
+% & $*$ [upcoming] \textbf{Heagy, L. J.}, 2019. Sharing Reproducible Computations on Binder. \emph{Symposium on Data Science and Statistics (SDSS) 2019}
+% \end{entryright}
+
+% % 2018
+% \begin{entryright}
+% 2018 & $*$ \textbf{Heagy, L. J.}, Kang, S., Cockett, R., \&Oldenburg, D. W., 2018. Open source software for simulations and inversions of airborne electromagnetic data. \emph{AEM 2018: 7th International Workshop on Airborne Electromagnetics}
+% \end{entryright}
+
+% \begin{entryright}
+% 2017 & \textbf{Heagy, L. J.}, Cockett, R. \& Oldenburg, D. W., 2017. Modular electromagnetic simulations with applications to steel cased wells. \emph{6th International Symposium on Three-Dimensional Electromagnetics}.
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.} \& Cockett, R., 2017. Deploying a reproducible course. \emph{JupyterCon 2017}. \youtube{https://youtu.be/XY3Tq9Wd1\_A}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.} \& Cockett, R., 2017. Interactive Geophysics. \emph{SciPy Conference}. \youtube{https://youtu.be/NuUe2ja5LCE}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy L. J.}, Fournier, D., Kang, S. \& Miller, C., 2017. Simulation and parameter estimation in geophysics. \emph{British Columbia Geophysical Society Meeting}
+% \end{entryright}
+
+% % 2016
+% \begin{entryright}
+% & \textbf{Heagy, L. J.,}, 2016. Using open source tools to refactor geoscience education. \emph{SciPy Conference}. \youtube{https://youtu.be/IW2LDsevvDk}
+% \end{entryright}
+
+% \begin{entryright}
+% & $*$ \textbf{Heagy, L. J.}, Cockett, R., \& Oldenburg, D. W., 2016. GeoSci: practices to collaboratively build online resources for geophysics education. \emph{AGU Fall Meeting}
+% \end{entryright}
+
+% \begin{entryright}
+% & $*$ \textbf{Heagy, L. J.} \& Oldenburg, D. W., 2016. Examining the impact of steel cased wells on electromagnetic signals. \emph{AGU Fall Meeting}
+% \end{entryright}
+
+% \begin{entryright}
+% & $*$ Kang, S., Cockett, R., \textbf{Heagy, L. J.} and Oldenburg, D. W., 2016. Practices to enable the geophysical research spectrum: from fundamentals to applications. \emph{AGU Fall Meeting}
+% \end{entryright}
+
+% \begin{entryright}
+% & Yang, D., Oldenburg, D. W. \& \textbf{Heagy, L. J.}, 2016. 3D DC resistivity modeling of steel casing for reservoir monitoring using equivalent resistor network. \emph{SEG Annual Meeting}. \doi{10.1190/segam2016-13868475.1}
+% \end{entryright}
+
+% % 2015
+% \begin{entryright}
+% 2015 & Cockett, R., \textbf{Heagy, L. J.}, Kang, S. \& Rosenkjaer, G. K., 2015. Development practices and lessons learned in developing SimPEG. \emph{AGU Fall Meeting}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.}, 2015. Using Python to Span the Gap between Education, Research, and Industry Applications in Geophysics. \emph{SciPy Conference}. \youtube{https://youtu.be/4msHJMBvzaI}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.}, Cockett, R., Kang, S., Rosenkjaer, G. K. \& Oldenburg, D. W., 2015. simpegEM: An open-source resource for simulation and parameter estimation problems in electromagnetic geophysics. \emph{AGU Fall Meeting}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.}, Cockett, R., Kang, S. \& Oldenburg, D. W., 2015. Real simulation tools in introductory courses: packaging and repurposing our research code. \emph{AGU Fall Meeting}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.}, Cockett, R., Oldenburg, D. W. \& Wilt, M., 2015. Modelling electromagnetic problems in the presence of cased wells. \emph{SEG Annual Meeting}. \doi{10.1190/segam2015-5931035.1}
+% \end{entryright}
+
+% \begin{entryright}
+% & Kang, S., Cockett, R., \textbf{Heagy, L. J.}, \& Oldenburg, D. W., 2015. Moving between dimensions in electromagnetic inversions. \emph{SEG Annual Meeting}. \doi{10.1190/segam2015-5930379.1}
+% \end{entryright}
+
+% % 2014
+% \begin{entryright}
+% 2014 & Caudillo-Mata, L. A., Haber, E., \textbf{Heagy, L. J.}, \& Oldenburg, D. W., 2014. Numerical upscaling of electrical conductivity: A problem specific approach to generate coarse-scale models. \emph{SEG Annual Meeting}. \doi{10.1190/segam2014-1488.1}
+% \end{entryright}
+
+% \begin{entryright}
+% & Devriese, S. G. R., Corcoran, N., Cowan, D., Davis, K., Bild-Enkin, D., Fournier, D., \textbf{Heagy, L. J.}, Kang, S., Marchant, D., McMillan, M. S., Mitchell, M., Rosenkjar, G. K., Yang, D. \& Oldenburg, D. W., 2014. Magnetic inversion of three airborne data sets over the Tli Kwi Cho kimberlite complex. \emph{SEG Annual Meeting}. \doi{10.1190/segam2014-1205.1}
+% \end{entryright}
+
+% \begin{entryright}
+% & Fournier, D., \textbf{Heagy, L. J.}, Corcoran, N., Cowan, D., Devriese, S. G. R., Bild-Enkin, D., Davis, K., Kang, S., Marchant, D., McMillan, M. S., Mitchell, M., Rosenkjar, G. K., Yang, D., Oldenburg, D. W., 2014. Multi-EM systems inversion - Towards a common conductivity model for the Tli Kwi Cho complex. \emph{SEG Annual Meeting}. \doi{10.1190/segam2014-1110.1}
+% \end{entryright}
+
+% \begin{entryright}
+% & Fournier, D., \textbf{Heagy, L. J.}, Corcoran, N., Cowan, D., Devriese, S. G. R., Bild-Enkin, D., Davis, K., Kang, S., Marchant, D., McMillan, M. S., Mitchell, M., Rosenkjar, G. K., Yang, D., Oldenburg, D. W., 2014. Multi-EM systems inversion - Towards a common conductivity model for the Tli Kwi Cho complex. \emph{SEG Annual Meeting}. \doi{10.1190/segam2014-1110.1}
+% \end{entryright}
+
+% \begin{entryright}
+% & \textbf{Heagy, L. J.}, Cockett, R., \& Oldenburg, D. W., 2014. Parametrized inversion framework for proppant volume in a hydraulically fractured reservoir. \emph{SEG Annual Meeting}. \doi{10.1190/segam2014-1639.1}
+% \end{entryright}
+
+% \begin{entryright}
+% & $\dagger$\textbf{Heagy, L. J.}, Oldenburg, D. W. \& Chen, J., 2014. Where does the proppant go? Examining the application of electromagnetic methods for hydraulic fracture characterization. \emph{CSEG GeoConvention} \\
+% & $\quad \dagger$ Student Honourable Mention: Integrated Poster
+% \end{entryright}
+
+% \begin{entryright}
+% & $*$ \textbf{Heagy, L. J.} \& Oldenburg, D. W., 2014. Using electromagnetics to delineate proppant distribution in a hydraulically fractured reservoir. \emph{SEG Development and Production Forum, Santa Rosa CA}.
+% \end{entryright}
+
+% \begin{entryright}
+% & Wilt, M., \textbf{Heagy, L. J.} \& Chen, J., 2014. Hydrofracture Mapping and Monitoring with Borehole Electromagnetic (EM) Methods. \emph{76th EAGE Conference and Exhibition}
+% \end{entryright}
+
+% \begin{entryright}
+% 2013 & $\dagger$ \textbf{Heagy L. J.} \& Oldenburg, D. W., 2013. Investigating the potential of using conductive or permeable proppant particles for hydraulic fracture characterization. \emph{SEG Annual Meeting}. \doi{10.1190/segam2013-1372.1} \\
+% & $\quad\dagger$ Award of Merit (Best Student Paper, Annual Meeting)
+% \end{entryright}
+
+
+
+% % =========================== Media ================================ %
+
+% \heading{Media}
+
+% \begin{entryright}
+% 2018 & Guest on Episode 163: Python in Geoscience, May 25, 2018. \emph{Talk Python to Me} by Michael Kennedy (\href{https://talkpython.fm/episodes/show/163/python-in-geoscience}{https://talkpython.fm/})
+% \end{entryright}
+
+% \begin{entryright}
+% 2017 & Guest on Episode 41, Apr. 24, 2017. \emph{Undersampled Radio} by Graham Ganssle and Matt Hall (\href{https://undersampledrad.io/home/2017/4/inverterizer}{https://undersampledrad.io})
+% \end{entryright}
+
+% \begin{entryright}
+%  & Guest on Episode 11, Jan. 24, 2017. \emph{Seismic Soundoff} by the Society of Exploration Geophysicists (\href{http://seg.org/podcast/Post/4610/Episode-11-Geophysical-Electromagnetics-2017-DISC}{http://seg.org/podcast})
+% \end{entryright}
+
+% \begin{entryright}
+% 2012 & Article: Science 100 pioneer grounded in geophysics. \emph{University of Alberta Spring Convocation 2012: Celebrating Talented People} (\href{https://www.ualberta.ca/news-and-events/newsarticles/2012/06/science100pioneergroundedingeophysics}{https://www.ualberta.ca/news-and-events/newsarticles})
+% \end{entryright}
+
+\end{document}
