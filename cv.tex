@@ -126,7 +126,7 @@
 
 \newcommand{\heading}[1]{
     \begin{minipage}[t]{\textwidth}
-    \vspace{0.12cm}
+    \vspace{0.1cm}
     {\LARGE #1}\\
     \vspace{-0.24cm}
     \hrule
@@ -136,7 +136,7 @@
 }
 
 \newcommand{\subheading}[1]{
-    \vspace{0.5cm}
+    \vspace{0.4cm}
     {\Large #1}\\
     \vspace{-0.2cm}
 }
@@ -176,7 +176,7 @@
 
 \NewEnviron{mycompactitemize}{
     \vspace{-0.18cm}
-    \begin{itemize}[topsep=0pt,itemsep=0.1pt]
+    \begin{itemize}[topsep=0pt,itemsep=0.0pt]
         \BODY
     \end{itemize}
     % \vspace{-0.1cm}
@@ -195,7 +195,7 @@
     \footnotesize
     \emph{
         \shortname $~\cdot~$
-        \cv $~\cdot~$
+        \CV $~\cdot~$
         \monthyear\today
     }
 }
@@ -387,7 +387,7 @@ and \emph{Electromagnetic Geophysics}
 
 I participate in Project Jupyter and have attended annual team meetings since 2017 as well as community workshops on Jupyter at HPC Facilities\footnote{\href{https://blog.jupyter.org/jupyter-for-science-user-facilities-and-high-performance-computing-de178106872}{https://blog.jupyter.org/jupyter-for-science-user-facilities-and-high-performance-computing-de178106872}}
 and Dashboarding with Project Jupyter\footnote{\href{https://blog.jupyter.org/jupyter-community-workshop-dashboarding-with-project-jupyter-b0e421bdf164}{https://blog.jupyter.org/jupyter-community-workshop-dashboarding-with-project-jupyter-b0e421bdf164}}.
-I also attended the Jupyter in Education workshop and am a co-author on the \emph{Teaching and Learning with Jupyter} book-project\footnote{\href{https://jupyter4edu.github.io/jupyter-edu-book}{https://jupyter4edu.github.io/jupyter-edu-book}}. I lead the geophysics component of the \emph{Jupyter meets the Earth}\footnote{\href{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}} project which is a collaboration between members of the Pangeo Project\footnote{\href{https://pangeo.io}{https://pangeo.io}}, Project Jupyter and geoscience researchers at NCAR and UC Berkeley.
+I also attended the Jupyter in Education workshop and am a co-author on the \emph{Teaching and Learning with Jupyter} book-project\footnote{\href{https://jupyter4edu.github.io/jupyter-edu-book}{https://jupyter4edu.github.io/jupyter-edu-book}}. I lead the geophysics component of the \emph{Jupyter meets the Earth}\footnote{\href{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}} project which is a collaboration between members of the Pangeo Project\footnote{\href{https://pangeo.io}{https://pangeo.io}}, Project Jupyter and geoscience researchers at NCAR and UC Berkeley. I am also helping facilitate conversations and providing input on the development of an organization which could grow out of the federated JupyterHub deployment in Canada: syzygy\footnote{\href{https://blog.jupyter.org/national-scale-interactive-computing-2c104455e062}{https://blog.jupyter.org/national-scale-interactive-computing-2c104455e062}}.
 
 \subheading{Open science community development and best practices}
 
@@ -452,7 +452,7 @@ A full list of papers, keynotes, and other presentations begins on page ~\pagere
 \subheading{Machine learning in the physical sciences}
 
 \begin{myitemize}
-    \item{[in prep] Heagy, L.J., Oldenburg, D. W., Bloom, J., \& P\'erez, F., 2019. A machine learning approach for modelling across scales in electromagnetic geophysics.}
+    \item{[in prep] Heagy, L.J., Bloom, J., Oldenburg, D. W., \& P\'erez, F., 2019. A machine learning approach for modelling across scales in electromagnetic geophysics.}
 \end{myitemize}
 
 This paper outlines an approach for using a neural net to estimate the missing physics in a numerical simulation performed on a grid which is coarser than the variations of physical properties.
@@ -499,7 +499,7 @@ This paper presents an efficient approach for solving and inverting Richards equ
     \item{[in review] Fournier, D., Heagy, L. J. \& Oldenburg, D. W., 2019. Sparse magnetic vector inversion in spherical coordinates: Application to the Kevitsa Ni-Cu-PGE magnetic anomaly, Finland. \emph{Geophysics}}
 \end{myitemize}
 
-This paper introduces an approach for inverting magnetic data to recover compact geologic targets that have both induced and remenant magnetizations. The inversion is performed in spherical coordinates which allows us to impose sparsity assumptions on the magnitude and direction of magnetization independently. We demonstrate our approach in a mineral exploration case-study in Finland; the magnetization we recover is consistent with laboratory measurements and provides evidence for tectonic deformation. \\
+This paper introduces an approach for inverting magnetic data to recover compact geologic targets that have both induced and remnant magnetizations. The inversion is performed in spherical coordinates which allows us to impose sparsity assumptions on the magnitude and direction of magnetization independently. We demonstrate our approach in a mineral exploration case-study in Finland; the magnetization we recover is consistent with laboratory measurements and provides evidence for tectonic deformation. \\
 
 \begin{myitemize}
     \item{[in press] Kang, S., Oldenburg, D. W. \& Heagy, L. J., 2019. Detecting induced polarization effects in time-domain data: a modeling study using stretched exponentials. \emph{Exploration Geophysics}. \arxiv{1909.12993}}
@@ -507,6 +507,7 @@ This paper introduces an approach for inverting magnetic data to recover compact
 
 In this paper, we perform numerical simulations to examine the detectability of chargeable targets in airborne time-domain electromagnetic surveys for mineral exploration. Our analysis examines the impact of the background conductivity, the conductivity of the target, its geometry, and its depth on the strength of the induced-polarization signal we observe in airborne data. This study shows that a moderately conductive and chargeable target in a resistive host is an ideal scenario for generating strong induced polarization signals.
 
+% \clearpage
 \subheading{Open science and education}
 
 \begin{myitemize}
@@ -579,7 +580,7 @@ I contribute to a number of open-source software projects, all of which are acce
     \item \textbf{GeoSci Labs:} a collection of Jupyter notebooks for exploring concepts in geophysics (\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs})
     % \item Computational Geophysics (\href{http://computation.geosci.xyz}{http://computation.geosci.xyz})
 \end{mycompactitemize}
-\end{entryright}\vspace{-0.3cm}
+\end{entryright}\vspace{-0.4cm}
 
 \begin{entryright}
 \tworow{2014 -- present} & \textbf{SimPEG}  \\
@@ -589,7 +590,7 @@ I contribute to a number of open-source software projects, all of which are acce
     \item \textbf{discretize:} meshing and discretization tools for finite volume and inverse problems (\href{https://github.com/simpeg/discretize}{https://github.com/simpeg/discretize})
     \item \textbf{geoana: } analytic solutions for common physics problems relevant to geophysics (\href{https://github.com/simpeg/geoana}{https://github.com/simpeg/geoana})
 \end{mycompactitemize}
-\end{entryright}\vspace{-0.3cm}
+\end{entryright}\vspace{-0.4cm}
 
 % =========================== TEACHING ================================ %
 
@@ -682,7 +683,7 @@ I contribute to a number of open-source software projects, all of which are acce
     & Organized with Douglas Oldenburg, Adam Pidlisecky and Rowan Cockett \\
     & (\href{http://www.birs.ca/events/2016/2-day-workshops/16w2695}{http://www.birs.ca/events/2016/2-day-workshops/16w2695})  \\
 \end{entryright}
-
+% \clearpage
 
 % =========================== Service ================================ %
 \heading{Service}
@@ -694,7 +695,7 @@ I contribute to a number of open-source software projects, all of which are acce
 & Topics: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
 \end{entryright}
 
-\clearpage
+
 \subheading{Conferences \& Workshops}
 
 \begin{entryright}
@@ -763,7 +764,7 @@ I contribute to a number of open-source software projects, all of which are acce
 \heading{Awards}
 
 \begin{entryright}
-2019 & \textbf{Gerald W. Hohmann Career Achievement Award}: outstanding junior scientist \\
+2019 & \textbf{Gerald W. Hohmann Career Achievement Award: Outstanding Junior Scientist} \\
 & Awarded for advances in simulation and inversion of electromagnetic data and promotion of an open source culture for collaborative, inclusive and reproducible research. ($\$2,500$)
 \end{entryright}
 
@@ -936,11 +937,11 @@ I contribute to a number of open-source software projects, all of which are acce
 % 2019
 
 \begin{entryright}
-2019 & [upcoming] \textbf{Heagy, L. J.} Jupyter meets the Earth: from geophysical inversions to open, collaborative geoscience. \emph{Women In Data Science \@ Stanford Earth}. Stanford, CA
+2019 & [upcoming] \textbf{Heagy, L. J.} \emph{Colorado School of Mines Heiland Lecture}. Golden, CO
 \end{entryright}
 
 \begin{entryright}
-& [upcoming] \textbf{Heagy, L. J.} \emph{Colorado School of Mines Heiland Lecture}. Golden, CO
+& \textbf{Heagy, L. J.} Jupyter meets the Earth: from geophysical inversions to open, collaborative geoscience. \emph{Women In Data Science \@ Stanford Earth}. Stanford, CA
 \end{entryright}
 
 \begin{entryright}
