@@ -63,7 +63,7 @@
 \fancyhf{} % sets both header and footer to nothing
 \renewcommand{\headrulewidth}{0pt}
 
-\usepackage[margin=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[margin=2cm,top=2.25cm,bottom=2.25cm]{geometry}
 % \newif\ifdescriptions
 % \descriptionsfalse
 % \descriptionstrue
@@ -114,14 +114,7 @@
     {%\HelveticaNeueLight
     % \fontsize{26pt}{0}\selectfont #1
     \Huge #1
-    }\\[0.35cm]
-}
-
-\newcommand{\mysubtitle}{
-    {
-    % \fontsize{12pt}{0}\selectfont
-    \CV\ $~\cdot~$ \monthyear\today
-    } \\[0.25cm]
+    }\\[0.05cm]
 }
 
 \newcommand{\heading}[1]{
@@ -176,7 +169,7 @@
 
 \NewEnviron{mycompactitemize}{
     \vspace{-0.18cm}
-    \begin{itemize}[topsep=0pt,itemsep=0.0pt]
+    \begin{itemize}[topsep=0pt,itemsep=-0.1pt]
         \BODY
     \end{itemize}
     % \vspace{-0.1cm}
@@ -243,11 +236,11 @@ My background is in geophysical simulations and inversions.
 
 \subheading{Current Projects}
 \begin{myitemize}
-    \item{Exploring the principled application of machine learning to problems constrained by physical models}
-    \item{Interactive, high-performance computing for geophysical simulations and inversions with the Jupyter and Pangeo projects}
-    \item{Numerical methods for simulations and parameter estimation in geophysics}
-    \item{Electromagnetic geophysical methods in settings with large contrasts in electrical and magnetic physical properties}
-    \item{Joint inversions of geophysical data and incorporating geologic information in inversions with petrophysical constraints}
+    \item{Exploring the principled application of machine learning to problems constrained by physical models.}
+    \item{Interactive, high-performance computing for geophysical simulations and inversions with the Jupyter and Pangeo projects.}
+    \item{Numerical methods for simulations and parameter estimation in geophysics.}
+    \item{Electromagnetic geophysical methods in settings with large contrasts in electrical and magnetic physical properties.}
+    \item{Joint inversions of geophysical data and incorporating geologic information in inversions with petrophysical constraints.}
 \end{myitemize}
 % =========================== EDUCATION ================================ %
 
@@ -279,7 +272,7 @@ My background is in geophysical simulations and inversions.
 \begin{entryright}
 \tworow{Nov. 2018 -- present} & \textbf{Postdoctoral Researcher}, Department of Statistics, University of California, Berkeley\\
 & Advisor: Fernando P\'erez \\
-& Themes: Machine learning in the physical sciences, interactive computing, statistical techniques for geoscience
+& Themes: Machine learning in the physical sciences, interactive computing, statistical techniques for geoscience, open and reproducible research, data science education
 \end{entryright}
 
 % =========================== EXPERIENCE ================================ %
@@ -372,43 +365,43 @@ My background is in geophysical simulations and inversions.
 \heading{Leadership in Open Science}
 \subheading{Project co-creator: SimPEG}
 
-SimPEG is an open-source software project for simulation and parameter estimation in geophysics (\href{https://simpeg.xyz}{simpeg.xyz}) that was founded by Rowan Cockett, myself, and Seogi Kang. I continue to serve in a leadership role with the development, maintenance, and community support of the project. I review suggested changes to the code, advise on new developments, respond to issues, and lead weekly team meetings that discuss research and software development. Beyond research publications that include the founding team, SimPEG has been used in at least 6 peer-reviewed publications, 8 conference proceedings, 1 thesis at the Colorado School of Mines, and 3 in-progress theses at the University of British Columbia.
+SimPEG is an open-source software project for simulation and parameter estimation in geophysics (\href{https://simpeg.xyz}{simpeg.xyz}) that I co-founded with Rowan Cockett and Seogi Kang. I continue to serve in a leadership role with the development, maintenance, and community support of the project. I review suggested changes to the code, advise on new developments, respond to issues, and lead weekly team meetings that discuss research and software development. Beyond research publications that include the founding team, SimPEG has been used in at least 6 peer-reviewed publications, 8 conference proceedings, 1 thesis at the Colorado School of Mines, and 3 in-progress theses at the University of British Columbia.
 
 
 \subheading{Project co-creator: GeoSci.xyz}
 
-In 2013, myself, Douglas Oldenburg, and Rowan Cockett started the \GeoSci project. It is a collection of open-source web-based textbooks, including \emph{Geophysics for Practicing Geoscientists (GPG)}
+In 2013, I started the \GeoSci project with Douglas Oldenburg, and Rowan Cockett. This collection of open-source educational materials includes web-based textbooks, such as \emph{Geophysics for Practicing Geoscientists (GPG)}
 %\footnote{\gpg}
 and \emph{Electromagnetic Geophysics}
 % \footnote{\emgeosci}
-, as well as a collection of interactive Jupyter notebooks for education\footnote{\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs}}. I continue to serve as a content editor: I help outline material to be created and review updates and new submissions. \GeoSci resources are used as course material in at least 5 different universities and have been viewed by more than 200,000 users worldwide.
+, and interactive Jupyter notebooks for geophysics\footnote{\href{https://github.com/geoscixyz/geosci-labs}{https://github.com/geoscixyz/geosci-labs}}. I continue to serve as a content editor: I help outline material to be created and review updates and new submissions. \GeoSci resources are used as course material in at least 5 different universities and have been viewed by more than 200,000 users worldwide.
 
 \subheading{Project Jupyter participation}
 
-I participate in Project Jupyter and have attended annual team meetings since 2017 as well as community workshops on Jupyter at HPC Facilities\footnote{\href{https://blog.jupyter.org/jupyter-for-science-user-facilities-and-high-performance-computing-de178106872}{https://blog.jupyter.org/jupyter-for-science-user-facilities-and-high-performance-computing-de178106872}}
+I participate in Project Jupyter and have attended the invitation-only annual team meetings since 2017 as well as community workshops on Jupyter at HPC Facilities\footnote{\href{https://blog.jupyter.org/jupyter-for-science-user-facilities-and-high-performance-computing-de178106872}{https://blog.jupyter.org/jupyter-for-science-user-facilities-and-high-performance-computing-de178106872}}
 and Dashboarding with Project Jupyter\footnote{\href{https://blog.jupyter.org/jupyter-community-workshop-dashboarding-with-project-jupyter-b0e421bdf164}{https://blog.jupyter.org/jupyter-community-workshop-dashboarding-with-project-jupyter-b0e421bdf164}}.
-I also attended the Jupyter in Education workshop and am a co-author on the \emph{Teaching and Learning with Jupyter} book-project\footnote{\href{https://jupyter4edu.github.io/jupyter-edu-book}{https://jupyter4edu.github.io/jupyter-edu-book}}. I lead the geophysics component of the \emph{Jupyter meets the Earth}\footnote{\href{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}} project which is a collaboration between members of the Pangeo Project\footnote{\href{https://pangeo.io}{https://pangeo.io}}, Project Jupyter and geoscience researchers at NCAR and UC Berkeley. I am also helping facilitate conversations and providing input on the development of an organization which could grow out of the federated JupyterHub deployment in Canada: Syzygy\footnote{\href{https://blog.jupyter.org/national-scale-interactive-computing-2c104455e062}{https://blog.jupyter.org/national-scale-interactive-computing-2c104455e062}}.
+I also attended the Jupyter in Education workshop and am a co-author of the \emph{Teaching and Learning with Jupyter} book project\footnote{\href{https://jupyter4edu.github.io/jupyter-edu-book}{https://jupyter4edu.github.io/jupyter-edu-book}}. I lead the geophysics component of the \emph{Jupyter meets the Earth}\footnote{\href{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}{https://blog.jupyter.org/jupyter-meets-the-earth-1b0eb33c83f}} project, which is a collaboration between members of the Pangeo Project\footnote{\href{https://pangeo.io}{https://pangeo.io}}, Project Jupyter and geoscience researchers at the National Center for Atmospheric Research (NCAR) and UC Berkeley. I am also helping facilitate conversations and providing input on the development of an organization that could grow out of the federated JupyterHub deployment in Canada: Syzygy\footnote{\href{https://blog.jupyter.org/national-scale-interactive-computing-2c104455e062}{https://blog.jupyter.org/national-scale-interactive-computing-2c104455e062}}.
 
 \subheading{Open science community development and best practices}
 
-I was an editor with the Journal of Open Source Software (JOSS) from 2017 to 2019 where I facilitated peer-review of scientific software contributions for 23 submissions. I have co-taught workshops on best practices in open source software development at the AGU annual meeting as well as at GeoHackweek
+I was an editor with the Journal of Open Source Software (JOSS) from 2017 to 2019, where I facilitated peer-review of scientific software contributions for 23 submissions. I have co-taught workshops on best practices in open source software development at the AGU annual meeting as well as at GeoHackweek
 \footnote{\href{http://geohackweek.github.io}{http://geohackweek.github.io}}.
 
 
-% \clearpage
+\clearpage
 
 % =========================== Broader Impact ================================ %
 \heading{Metrics of Broad Impact}
 
-My scientific career, by nature of investing significant effort in the creation of open tools for geophysics which are used internationally by researchers, industry professionals, and educators, has a different impact profile that that of a researcher whose main output is purely publication-based. Here, I outline a few metrics of this broader impact. \vspace{0.3cm}
+My scientific career, by nature of investing significant effort in the creation of open tools for geophysics that are used internationally by researchers, industry professionals, and educators, has a different impact profile than that of a researcher whose main output is purely publication-based. Here, I outline a few metrics of this broader impact. \vspace{0.3cm}
 
-\textbf{SimPEG user base}: The SimPEG slack community has over 200 members, which represents the most committed and engaged SimPEG users. The full user base is likely much larger but this is difficult to quantify because of the open-source nature of the code. \vspace{0.3cm}
+\textbf{SimPEG user base}: The SimPEG Slack community has over 200 members, which represents the most committed and engaged SimPEG users. The full user base is likely much larger but this is difficult to quantify because of the open-source nature of the code. \vspace{0.3cm}
 
 %My estimate\footnote{SimPEG is open source and can be downloaded from multiple sources which cannot directly be tracked.} based on the number of community members on the SimPEG Slack group is $\sim$150. The download-count via PyPI (the Python Packaging Index) is over 800 according to \href{http://depsy.org/package/python/SimPEG}{depsy.org}. \vspace{0.3cm}
 
-\textbf{Institutions and companies using SimPEG}: Below is a sampling of some universities, national labs, geologic surveys and companies where SimPEG is being used. Where applicable, I have also included example publications where SimPEG is used.
+\textbf{Institutions and companies using SimPEG}: Below is a sampling of some universities, national labs, geologic surveys, and companies that use SimPEG. Where applicable, I have also included example publications where SimPEG is used.
 \begin{myitemize}\vspace{0.3cm}
-\item \textbf{Colorado School of Mines}: The DC resistivity and electromagnetic simulation and inversion are used by researchers in the Center for Gravity, Electrical, and Magnetic Studies (CGEM). For example, Par\'e \& Li (2017) examine the impact of different regularization choices in a DC resistivity inversion and Maag-Capriotti \& Li (2018) use the induced polarization simulation in a methodology study, \\ \doi{10.1190/segam2017-17739005.1}, \doi{10.1190/segam2018-2998500.1}.
+\item \textbf{Colorado School of Mines}: The DC resistivity and electromagnetic simulation and inversion are used by researchers in the Center for Gravity, Electrical, and Magnetic Studies (CGEM). For example, Par\'e \& Li (2017) examine the impact of different regularization choices in a DC resistivity inversion and Maag-Capriotti \& Li (2018) use the induced polarization simulation to develop an inversion approach that includes a clustering term in the regularization. \\ \doi{10.1190/segam2017-17739005.1}, \doi{10.1190/segam2018-2998500.1}.
 
 \item \textbf{Dias Geophysical}: SimPEG is used for data processing, survey planning, and inversion of field data. In particular, they make extensive use of the 3D inversion capabilities for DC Resistivity and Induced Polarization data.
 
@@ -429,7 +422,7 @@ My scientific career, by nature of investing significant effort in the creation 
 \begin{myitemize}\vspace{0.3cm}
 \item \textbf{Fresno State}: The GPG was used in EES 118/250T: Applied Geophysics in 2017
 \item \textbf{Southern University of Science and Technology (China)}: The GPG is used in ESS302: Applied Geophysics II (Gravity, Magnetic, Electrical and Well Logging)
-\item \textbf{University of Alabama}: The GPG is used in GEO 369: Introduction Geophysics,
+\item \textbf{University of Alabama}: The GPG is used in GEO 369: Introduction Geophysics
 \item \textbf{University of British Columbia}: The GPG is used in EOSC 350: Environmental, Geotechnical, and Exploration Geophysics I
 \item \textbf{University of Houston}: EM GeoSci is used in GEOL 4397-03: Electromagnetic Methods for Exploration
 \end{myitemize}\vspace{0.3cm}
@@ -452,12 +445,13 @@ A full list of papers, keynotes, and other presentations begins on page ~\pagere
 \subheading{Machine learning in the physical sciences}
 
 \begin{myitemize}
-    \item{[in prep] Heagy, L.J., Bloom, J., Oldenburg, D. W., \& P\'erez, F., 2019. A machine learning approach for modelling across scales in electromagnetic geophysics.}
+    \item{[in prep] Heagy, L. J., Bloom, J., Oldenburg, D. W., \& P\'erez, F., 2019. A machine learning approach for modelling across scales in electromagnetic geophysics.}
 \end{myitemize}
 
-This paper outlines an approach for using a neural net to estimate the missing physics in a numerical simulation performed on a grid which is coarser than the variations of physical properties.
-By construction, we enforce that the solutions obeys the governing physics.
+This paper outlines an approach for using a neural net to estimate and capture the fine-scale physics that is ``missing'' from numerical simulations performed on a grid coarser than the variations of physical properties.
+We enforce that the solutions are physical by construction; rather than having the neural net predict the missing current density or electric fields directly, we estimate a source term that encodes this discrepancy.  By solving a second coarse-scale simulation of Maxwell's equations with the estimated source term, we then obtain the correction term.
 The application we consider is a time-domain electromagnetic simulation in settings with steel-cased wells.
+
 
 \subheading{Simulations and inversions in geophysics}
 
@@ -467,7 +461,7 @@ The application we consider is a time-domain electromagnetic simulation in setti
 \end{myitemize}
 
 These two papers outline a common framework for simulations and inversions across geophysical methods and discuss its implementation in the \texttt{SimPEG} project. The first paper (Cockett et al., 2015) introduces a modular structure for inverse problems that facilitates methods-based research for individual, joint, and co-operative inversions.
-The second paper (Heagy et al., 2017) discusses details of the forward simulation and sensitivity calculations in the context of electromagnetic simulations, including time-domain, frequency-domain and natural-source methods.
+The second paper (Heagy et al., 2017) discusses details of the forward simulation and sensitivity calculations in the context of electromagnetic simulations, including time-domain, frequency-domain and natural-source methods. This structure has since been adopted for all geophysical methods included in SimPEG.
 
 \subheading{Electromagnetic geophysics}
 
@@ -476,23 +470,24 @@ The second paper (Heagy et al., 2017) discusses details of the forward simulatio
     \item Heagy, L. J. \& Oldenburg, D. W., 2019b. Direct current resistivity with steel-cased wells. \emph{Geophysical Journal International}. \doi{10.1093/gji/ggz281}. \arxiv{1810.12446}
 \end{myitemize}
 
-These papers examine aspects of the fundamental physics of electromagnetics in settings with steel-cased wells which are highly conductive and magnetic. The first paper (Heagy \& Oldenburg, 2019a) presents a finite-volume modeling approach for time and frequency domain electromagnetics on 3D cylindrical meshes. The second paper (Heagy \& Oldenburg, 2019b) uses simulations to present physics-based considerations for survey design in casing integrity experiments, where the aim is to detect flaws of breaks along a wellbore, as well as injection experiments such as carbon capture and storage or hydraulic fracturing.
+These papers examine aspects of the fundamental physics of electromagnetics in settings with steel-cased wells that are highly conductive and magnetic. The first paper (Heagy \& Oldenburg, 2019a) presents an implementation of finite-volume modeling for time and frequency domain electromagnetics on 3D cylindrical meshes. The second paper (Heagy \& Oldenburg, 2019b) uses simulations to present physics-based considerations for survey design in casing integrity experiments, where the aim is to detect flaws of breaks along a wellbore, as well as injection experiments such as carbon capture and storage or hydraulic fracturing.
 
 
 \subheading{Numerical methods}
 
 \begin{myitemize}
-    \item Caudillo-Mata, L. A., Haber, E., Heagy, L. J. \& Schwarzbach, C., 2016. A framework for the upscaling of the electrical conductivity in the quasi-static Maxwell's equations. \emph{Journal of Computational and Applied Mathematics}. \doi{10.1016/j.cam.2016.11.051}
+    \item Caudillo-Mata, L. A., Haber, E., Heagy, L. J. \& Schwarzbach, C., 2017. A framework for the upscaling of the electrical conductivity in the quasi-static Maxwell's equations. \emph{Journal of Computational and Applied Mathematics}. \doi{10.1016/j.cam.2016.11.051}
 \end{myitemize}
 
-In this paper, we introduce an approach for estimating a coarse-scale electrical conductivity model from a fine-scale model. We solve a series of small, local inverse problems which aim to preserve physical responses between the two scales. The recovered coarse-scale model can then be used to perform numerical simulations of geophysical experiments. We demonstrate that the upscaling procedure is non-unique and that the recovered coarse-scale model depends upon the source-terms and boundary conditions used to define the local inverse problems.
+In this paper, we introduce an approach for estimating a coarse-scale electrical conductivity model from a fine-scale model. We solve a series of small, local inverse problems that aim to preserve physical responses between the two scales. The recovered coarse-scale model can then be used to perform numerical simulations of geophysical experiments. We demonstrate that the upscaling procedure is non-unique and that the recovered coarse-scale model depends upon the source-terms and boundary conditions used to define the local inverse problems.
 \\
 
 \begin{myitemize}
     \item Cockett, R., Heagy, L. J. \& Haber, E., 2018. Efficient 3D inversions using the Richards equation. \emph{Computers \& Geosciences}. \doi{10.1016/j.cageo.2018.04.006}
 \end{myitemize}
 
-This paper presents an efficient approach for solving and inverting Richards equation to estimate distributed hydraulic parameters in 1D, 2D or 3D. Richards equation is a non-linear time-domain equation for flow in the vadose zone which is the region of the Earth between the surface and the fully saturated zone.
+The Richards equation is a non-linear time-domain equation for flow in the vadose zone -- the region of the Earth between the surface and the fully saturated zone. In this paper, we present an efficient approach for solving and inverting the Richards equation to estimate distributed hydraulic parameters in 1D, 2D or 3D. We use sensitivity-vector products to compute gradients which substantially reduces the memory and computational requirements as compared to the typical approach where the dense sensitivity matrix is computed explicitly using finite difference or automatic differentiation.
+
 
 \subheading{Applied geophysics}
 
@@ -506,7 +501,8 @@ This paper introduces an approach for inverting magnetic data to recover compact
     \item{[in press] Kang, S., Oldenburg, D. W. \& Heagy, L. J., 2019. Detecting induced polarization effects in time-domain data: a modeling study using stretched exponentials. \emph{Exploration Geophysics}. \arxiv{1909.12993}}
 \end{myitemize}
 
-In this paper, we perform numerical simulations to examine the detectability of chargeable targets in airborne time-domain electromagnetic surveys for mineral exploration. Our analysis examines the impact of the background conductivity, the conductivity of the target, its geometry, and its depth on the strength of the induced-polarization signal we observe in airborne data. This study shows that a moderately conductive and chargeable target in a resistive host is an ideal scenario for generating strong induced polarization signals.
+In this paper, we perform numerical simulations to examine the detectability of chargeable targets in airborne time-domain electromagnetic surveys for mineral exploration. Our analysis examines the impact of the background conductivity, the conductivity of the target, its geometry, and its depth on the strength of the induced-polarization signal we observe in airborne data.
+% This study shows that a moderately conductive and chargeable target in a resistive host is an ideal scenario for generating strong induced polarization signals.
 
 % \clearpage
 \subheading{Open science and education}
@@ -515,14 +511,14 @@ In this paper, we perform numerical simulations to examine the detectability of 
 \item Oldenburg, D. W., Heagy, L. J., Kang, S., Cockett, R., 2019. 3D electromagnetic modelling and inversion: a case for open source. \emph{Exploration Geophysics}. \doi{10.1080/08123985.2019.1580118}. \arxiv{1902.08245}
 \end{myitemize}
 
-This paper presents an argument for open-source software and open-science practices to progress collaborative, multidisciplinary research in the geosciences. We provide examples of the benefits of adopting such a model based on our experience with the SimPEG project; including streamlined collaboration and transfer of methodological advances between domains of geophysics, reduced implementation-overhead for students and researchers interested in building upon previous work and the ability to quickly disseminate reproducible results.
+This paper presents an argument for open-source software and open science practices to advance collaborative, multidisciplinary research in the geosciences. We provide examples of the benefits of adopting this model based on our experience with the SimPEG project. These include streamlined collaboration and transfer of methodological advances between domains of geophysics, reduced implementation overhead for students and researchers interested in building upon previous work and the ability to quickly disseminate reproducible results.
 \\
 
 \begin{myitemize}
 \item Barba, L. A., Barker, L. J., Blank, D. S., Brown, J., Downey, A. B., George, T., Heagy, L. J.,  Mandli, K. T., Moore, J. K., Lippert, D.,  Niemeyer, K. E., Watkins, R. R., West, R. H., Wickes, E., Willing, C., \& Zingale M., 2018. Teaching and Learning with Jupyter. \linebreak \href{https://jupyter4edu.github.io/jupyter-edu-book/}{https://jupyter4edu.github.io/jupyter-edu-book/}
 \end{myitemize}
 
-My contributions to this book on the use of Jupyter in the classroom are primarily in Chapter 4, \emph{A catalog of pedagogical patterns}. In this chapter, we outline strategies for structuring notebooks in a range of classroom activities, from teaching students concepts in computer science to connecting computations with interactive visualizations to allow students to explore systems or physical simulations.
+My contributions to this book on the use of Jupyter in the classroom are primarily in Chapter 4: \emph{A catalog of pedagogical patterns}. In this chapter, we outline strategies for structuring notebooks in a range of classroom activities, from teaching students concepts in computer science to connecting computations with interactive visualizations to allow students to explore systems or physical simulations.
 
 % =========================== Grants ================================ %
 
@@ -684,7 +680,7 @@ I contribute to a number of open-source software projects, all of which are acce
                 \item Mexico City, Mexico (November 6-7, 2017)
                 \item Buenos Aires, Argentina (November 13-14, 2017)
                 \item Santiago, Chile (November 16-17, 2017)
-                \item Santa Cruz de la Sierra, Bolivia (November 22-23, 2017) - Cancelled
+                \item Santa Cruz de la Sierra, Bolivia (November 22-23, 2017) - Canceled
                 \item Rio de Janeiro, Brazil (November 28-29, 2017)
                 \item Calgary, Canada (December 5-6, 2017)
                 \item Vancouver, Canada (December 12-13, 2017)
@@ -702,13 +698,14 @@ I contribute to a number of open-source software projects, all of which are acce
 % \clearpage
 
 % =========================== Service ================================ %
+\clearpage
 \heading{Service}
 
 \subheading{Editorial}
 
 \begin{entryright}
 \tworow{2017 -- \\ 2019} & \textbf{Editor: } Journal of Open Source Software \\
-& Topics: Geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
+& Topics: geoscience, geophysics (\href{http://joss.theoj.org/about}{http://joss.theoj.org/about})
 \end{entryright}
 
 
@@ -840,6 +837,7 @@ I contribute to a number of open-source software projects, all of which are acce
 & Awarded on the basis of superior academic achievement in Honors Geophysics or Specialization in Geophysics ($\$3,000 \times 2$)
 \end{entryright}
 
+\clearpage
 \begin{entryright}
 2010 -- 2012 & \textbf{The David K Robertson Award in Geophysics and Geology} \\
 & Awarded to a student entering the third year of a BSc Specializing in Geology or Geophysics on the basis of passion and talent in their field of study, demonstrated leadership, participation in extracurricular activities, and academic standing. ($\$5,000 \times 2$)
@@ -906,7 +904,7 @@ I contribute to a number of open-source software projects, all of which are acce
 \end{entryright}
 
 \begin{entryright}
-& Oldenburg, D. W., \textbf{Heagy, L. J.}, Kang, S., Cockett, R., 2019. 3D electromagnetic modelling and inversion: a case for open source. \emph{Exploration Geophysics}. \doi{10.1080/08123985.2019.1580118}. \arxiv{1902.08245}
+& Oldenburg, D. W., \textbf{Heagy, L. J.}, Kang, S. \& Cockett, R., 2019. 3D electromagnetic modelling and inversion: a case for open source. \emph{Exploration Geophysics}. \doi{10.1080/08123985.2019.1580118}. \arxiv{1902.08245}
 \end{entryright}
 
 % 2018
@@ -920,7 +918,7 @@ I contribute to a number of open-source software projects, all of which are acce
 \end{entryright}
 
 \begin{entryright}
-2016 & Caudillo-Mata, L. A., Haber, E., \textbf{Heagy, L. J.} \& Schwarzbach, C., 2016. A framework for the upscaling of the electrical conductivity in the quasi-static Maxwell's equations. \emph{Journal of Computational and Applied Mathematics}. \doi{10.1016/j.cam.2016.11.051}
+    & Caudillo-Mata, L. A., Haber, E., \textbf{Heagy, L. J.} \& Schwarzbach, C., 2017. A framework for the upscaling of the electrical conductivity in the quasi-static Maxwell's equations. \emph{Journal of Computational and Applied Mathematics}. \doi{10.1016/j.cam.2016.11.051}
 \end{entryright}
 
 \begin{entryright}
@@ -1036,7 +1034,7 @@ Computational Geophysics}. Ottawa, ON
 
 % 2016
 \begin{entryright}
-2016 & \textbf{Heagy, L. J.,},  Using open source tools to refactor geoscience education. \emph{SciPy Conference}. \youtube{https://youtu.be/IW2LDsevvDk}
+2016 & \textbf{Heagy, L. J.},  Using open source tools to refactor geoscience education. \emph{SciPy Conference}. \youtube{https://youtu.be/IW2LDsevvDk}
 \end{entryright}
 
 \begin{entryright}
